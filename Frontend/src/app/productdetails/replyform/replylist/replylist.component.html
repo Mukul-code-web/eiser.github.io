@@ -1,0 +1,27 @@
+
+          <div class="review_item reply-list" *ngFor="let reply of commentreplyservice.replycomments; let i = index" style="margin-top: 10px;">
+            <div *ngIf="reply.commentId === commentId">
+            <div class="media">
+              <div class="d-flex">
+                <i class="fa fa-share fa-2x" style="margin-top: 28px;margin-right: 10px;"></i>
+                <img [src]="reply.image" *ngIf="reply.image!=''" width="70" height="70" style="border-radius: 100%;">
+                <img [src]="url" *ngIf="reply.image===''" width="70" height="70" style="border-radius: 100%;">
+              </div>
+              <div class="media-body">
+                <h4>{{reply.fullname}}</h4>
+                <h6 style="font-size: 10px;">{{reply.date}}</h6>
+                <h5>{{reply.email}}</h5>
+                <a class="reply_btn" >Reply</a>
+              </div>
+            </div>
+            <p style="margin-left: 45px;">
+              {{reply.message}}
+            </p>
+            
+        
+            </div>
+          </div>
+      
+    
+    
+     

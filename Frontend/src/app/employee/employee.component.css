@@ -1,0 +1,15 @@
+.btn-primary{
+    margin: 10px;
+}
+span{
+    color:red;
+ }
+ input.ng-invalid.ng-touched{
+    border-color:red;
+ }
+ .form-gap {
+    padding-top: 20px;
+}
+button:disabled{
+    cursor:no-drop;
+}

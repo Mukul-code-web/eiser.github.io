@@ -1,0 +1,301 @@
+<div style="margin-top: 89px;">
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+              <div class="container">
+                <div
+                  class="banner_content d-md-flex justify-content-between align-items-center"
+                >
+                  <div class="mb-3 mb-md-0">
+                    <h2>Blog</h2>
+                    <p>Very us move be blessed multiply night</p>
+                  </div>
+                  <div class="page_link">
+                    <a [routerLink]="['/Home']">Home</a>
+                    <a [routerLink]="['/Blog']">Blog </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          
+           
+          <!--================End Home Banner Area =================-->
+      
+        <!--================Blog Area =================-->
+        <section class="blog_area section_gap" style="background-color: white;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                         <router-outlet></router-outlet>
+                      
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget search_widget">
+                                <form action="#">
+                                  <div class="form-group">
+                                    <div class="input-group mb-3">
+                                      <input type="text" class="form-control" placeholder="Search Keyword" id="myInput" autocomplete="off">
+                                      <div class="input-group-append">
+                                        <button class="btn" type="button"><i class="ti-search"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <button class="main_btn rounded-0 w-100" type="submit" disabled>Search</button>
+                                </form>
+                            </aside>
+                            
+      
+                            <aside class="single_sidebar_widget post_category_widget">
+                              <h4 class="widget_title">Category</h4>
+                              <ul class="list cat-list" id="myList">
+                                  <li>
+                                      <a [routerLink]="['./BlogData']" (click)="gotoTop()" class="d-flex active ">
+                                          <p>JAVASCRIPT</p>
+                                          <p>(19)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['./Php']" (click)="gotoTop()" class="d-flex">
+                                          <p>PHP</p>
+                                          <p>(07)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['./Ionic']" (click)="gotoTop()" class="d-flex">
+                                          <p>IONIC</p>
+                                          <p>(06)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['./Angular']" (click)="gotoTop()"  class="d-flex">
+                                          <p>ANGULAR</p>
+                                          <p>(07)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['./React']" (click)="gotoTop()" class="d-flex">
+                                          <p>REACT</p>
+                                          <p>(O3)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['./Jquery']" (click)="gotoTop()"  class="d-flex">
+                                          <p>JQUERY</p>
+                                          <p>(06)</p>
+                                      </a>
+                                  </li>
+                              </ul>
+                            </aside>
+      
+                            <aside class="single_sidebar_widget popular_post_widget">
+                                <h3 class="widget_title">Recent Post</h3>
+                                <div class="media post_item">
+                                    <img src="assets/img/product/inspired-product/i30.jpg" alt="post" style="width: 80px;">
+                                    <div class="media-body">
+                                        <a [routerLink]="['./AngularTutorial']" (click)="gotoTop()" >
+                                            <h3>Angular 7 Tutorial</h3>
+                                        </a>
+                                        <p>August 10, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="assets/img/product/inspired-product/i31.jpg" alt="post" style="width: 80px;">                              
+                                    <div class="media-body">
+                                        <a [routerLink]="['./PhpTutorial']" (click)="gotoTop()">
+                                            <h3>PHP Tutorial</h3>
+                                        </a>
+                                        <p>May 05, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="assets/img/product/inspired-product/i32.jpg" alt="post" style="width: 80px;">                              
+                                    <div class="media-body">
+                                        <a [routerLink]="['./JqueryTutorial']" (click)="gotoTop()">
+                                            <h3>jQuery Tutorial</h3>
+                                        </a>
+                                        <p>July 06, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <img src="assets/img/product/inspired-product/i33.jpg" alt="post" style="width: 80px;">
+                                    <div class="media-body">
+                                        <a [routerLink]="['./JavascriptTutorial']" (click)="gotoTop()">
+                                            <h3>Javascript Tutorial</h3>
+                                        </a>
+                                        <p>June 25, 2020</p>
+                                    </div>
+                                </div>
+                            </aside>
+                            <aside class="single_sidebar_widget tag_cloud_widget">
+                                <h4 class="widget_title">Tag Clouds</h4>
+                                <ul class="list">
+                                    <li>
+                                        <a [routerLink]="['./ExpressJSTutorial']" (click)="gotoTop()">ExpressJS</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./NodeJSTutorial']" (click)="gotoTop()">NodeJS</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./AngularTutorial']" (click)="gotoTop()">Angular</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./MongoDBTutorial']" (click)="gotoTop()">MongoDB</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./JavascriptTutorial']" (click)="gotoTop()">Javascript</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./HtmlTutorial']" (click)="gotoTop()">Html</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./BootstrapTutorial']" (click)="gotoTop()">Bootstrap</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['./TypeScriptTutorial']" (click)="gotoTop()">Typescript</a>
+                                    </li>
+                                </ul>
+                            </aside>
+      
+      
+                            <aside class="single_sidebar_widget instagram_feeds">
+                              <h4 class="widget_title">Instagram Feeds</h4>
+                              <ul class="instagram_row flex-wrap">
+                                  <li>
+                                      <a href="https://www.instagram.com/">
+                                        <img class="img-fluid" src="assets/img/product/inspired-product/i34.png" alt="" style="height: 70px;">
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://www.instagram.com/">
+                                        <img class="img-fluid" src="assets/img/product/inspired-product/i35.png" alt="" style="height: 70px;">
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://www.instagram.com/">
+                                        <img class="img-fluid" src="assets/img/product/inspired-product/i36.png" alt="" style="height: 70px;">
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://www.instagram.com/">
+                                        <img class="img-fluid" src="assets/img/product/inspired-product/i37.png" alt="" style="height: 70px;width:100px">
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://www.instagram.com/">
+                                        <img class="img-fluid" src="assets/img/product/inspired-product/i38.png" alt="" style="height: 70px;">
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://www.instagram.com/">
+                                        <img class="img-fluid" src="assets/img/product/inspired-product/i39.png" alt="" style="height: 70px;width: 100px;">
+                                      </a>
+                                  </li>
+                              </ul>
+                            </aside>
+      
+      
+                            <aside class="single_sidebar_widget newsletter_widget">
+                              <h4 class="widget_title">Newsletter</h4>
+      
+                              <form #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+                                <div class="form-group">
+                                  <input type="email" class="form-control" placeholder="Enter email"  id="EMAIL" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email >
+                                  <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                                  </span>
+                                </div>
+                                <button class="main_btn rounded-0 w-100" type="submit" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                              </form>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="isShow" (click)="gotoTop()" id="button" class="btn btn-primary"><i class="fa fa-arrow-up"></i></button>
+           
+        </section>
+        </div>
+        
+        <!--================Blog Area =================-->
+      
+          <!--================ start footer Area  =================-->
+          <footer class="footer-area section_gap">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-3 col-md-7 single-footer-widget">
+                  <h4 style="margin-left: 10px;">CONTACT US</h4>
+                  <table>
+                    <tr>
+                      <th>
+                    <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+                      </th>
+                      <th>
+                    <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+                    </th>
+                    </tr>
+                   <tr>
+                     <th>
+                      <i class="fa fa-phone fa-2x" style="color: white;"></i>
+                     </th>
+                     <th>
+                      <h6 style="color: white;">+91-7355876362</h6>
+                      </th>
+                   </tr>
+                   <tr>
+                     <th>
+                      <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+                     </th>
+                     <th>
+                      <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+                     </th>
+                   </tr>
+                 </table>
+                </div>
+               
+                <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+                  <h4>NEWSLETTER</h4>
+                  <p>You can trust us. we only send promo offers,</p>
+                  <div class="form-wrap" id="mc_embed_signup">
+                    <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+                      <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+                      <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                        </span>
+                      <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                      <div style="position: absolute; left: -5000px;">
+                        <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                      </div>
+                      <div class="info"></div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+                  <h4>ABOUT</h4>
+                  <table>
+                    <tr>
+                      <td>
+                        <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              
+              </div>
+
+              <div class="footer-bottom row align-items-center">
+                <p class="footer-text m-0 col-lg-8 col-md-12">
+        Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+                <div class="col-lg-4 col-md-12 footer-social">
+                  <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+                  <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+                  <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+                </div>
+              </div>
+              
+            </div>
+          </footer>

@@ -1,0 +1,48 @@
+a{
+    text-decoration: none;
+}
+span{
+    color:red;
+ }
+ input.ng-invalid.ng-touched{
+    border-color:red;
+ }
+ textarea.ng-invalid.ng-touched{
+    border-color:red;
+ }
+ button:disabled{
+     cursor:no-drop;
+ }
+ .info {
+    background-color: #e7f3fe;
+    font-size: 10px;
+  }
+  .rating-list li {
+   float: right;
+   color: #ddd;
+   padding: 10px 5px;
+ 
+ }
+ 
+ .rating-list span:hover,
+ .rating-list span:hover ~ span, .rating-list span.selected {
+   color: #ffd700;
+   cursor: pointer;
+ }
+ 
+ .rating-list {
+   display: inline-block;
+   list-style: none;
+ }
+ .rating-list span,
+ .rating-list span ~ span {
+   color:lightgrey;
+ }
+ .reply_btn:hover{
+cursor: pointer;
+ }
+ th{
+  padding: 10px;
+}
+
+ 

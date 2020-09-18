@@ -1,0 +1,238 @@
+<article class="blog_item">
+
+    <div class="blog_item_img">
+        <img src="assets/img/product/inspired-product/i86.jpg" alt="post">
+    </div>
+    
+    <div class="blog_details">
+    
+    <h2>MongoDB Tutorial</h2>
+    <p>MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.<br><br>
+        In simple words, you can say that - Mongo DB is a document-oriented database. It is an open source product, developed and supported by a company named 10gen.<br><br>
+        MongoDB is available under General Public license for free, and it is also available under Commercial license from the manufacturer.<br><br>
+        The manufacturing company 10gen has defined MongoDB as:<br><br>
+        "MongoDB is a scalable, open source, high performance, document-oriented database." - 10gen<br><br>
+        MongoDB was designed to work with commodity servers. Now it is used by the company of all sizes, across all industry.<br><br>
+    </p>
+    <h2>History of MongoDB</h2>
+    <p>The initial development of MongoDB began in 2007 when the company was building a platform as a service similar to window azure.<br><br>
+        MongoDB was developed by a NewYork based organization named 10gen which is now known as MongoDB Inc. It was initially developed as a PAAS (Platform as a Service). Later in 2009, it is introduced in the market as an open source database server that was maintained and supported by MongoDB Inc.<br><br>
+        The first ready production of MongoDB has been considered from version 1.4 which was released in March 2010.<br><br>
+        MongoDB2.4.9 was the latest and stable version which was released on January 10, 2014.
+    </p>
+    <h2>Purpose of building MongoDB</h2>
+    <p>All the modern applications require big data, fast features development, flexible deployment, and the older database systems not competent enough, so the MongoDB was needed.
+    </p>
+    <h5>The primary purpose of building MongoDB is:</h5>
+    <li>Scalability</li>
+    <li>Performance</li>
+    <li>High Availability</li>
+    <li>Scaling from single server deployments to large, complex multi-site architectures.</li>
+    <li>Key points of MongoDB</li>
+    <li>Develop Faster</li>
+    <li>Deploy Easier</li>
+    <li>Scale Bigger</li><br>
+    <h2>Example of document oriented database</h2>
+    <p>MongoDB is a document oriented database. It is a key feature of MongoDB. It offers a document oriented storage. It is very simple you can program it easily.<br><br>
+        MongoDB stores data as documents, so it is known as document-oriented database.
+    </p>
+    <div id="p01">FirstName = <span style="color: blue;">"John",</span><br>
+        Address = <span style="color: blue;">"Detroit",</span><br>
+        Spouse = [&#x0007B;<span style="color: blue;">Name: "Angela"</span>&#x0007D;].<br>
+        FirstName =<span style="color: blue;">"John",</span><br>
+        Address =<span style="color: blue;">"Wick"</span> 
+    </div><br>
+    <h2>NoSQL Databases</h2>
+    <p>We know that MongoDB is a NoSQL Database, so it is very necessary to know about NoSQL Database to understand MongoDB throughly.</p>
+    <h5>What is NoSQL Database</h5>
+    <p>Databases can be divided in 3 types:<br><br>
+        <li>RDBMS (Relational Database Management System)</li>
+        <li>OLAP (Online Analytical Processing)</li>
+        <li>NoSQL (recently developed database)</li>
+    </p>
+    <h5>NoSQL Database</h5>
+    <p>NoSQL Database is used to refer a non-SQL or non relational database.<br>
+        It provides a mechanism for storage and retrieval of data other than tabular relations model used in relational databases. NoSQL database doesn't use tables for storing data. It is generally used to store big data and real-time web applications.
+    </p>
+    <h5>History behind the creation of NoSQL Databases</h5>
+    <p>In the early 1970, Flat File Systems are used. Data were stored in flat files and the biggest problems with flat files are each company implement their own flat files and there are no standards. It is very difficult to store data in the files, retrieve data from files because there is no standard way to store data.<br><br>
+        Then the relational database was created by E.F. Codd and these databases answered the question of having no standard way to store data. But later relational database also get a problem that it could not handle big data, due to this problem there was a need of database which can handle every types of problems then NoSQL database was developed.
+    </p>
+    <h5>Advantages of NoSQL</h5>
+    <li>It supports query language.</li>
+    <li>It provides fast performance.</li>
+    <li>It provides horizontal scalability.</li><br>
+    <h2>MongoDB advantages over RDBMS</h2>
+    <p>In recent days, MongoDB is a new and popularly used database. It is a document based, non relational database provider.<br><br>
+        Although it is 100 times faster than the traditional database but it is early to say that it will broadly replace the traditional RDBMS. But it may be very useful in term to gain performance and scalability.<br><br>
+        A Relational database has a typical schema design that shows number of tables and the relationship between these tables, while in MongoDB there is no concept of relationship.
+    </p>
+    <h5>MongoDB Advantages</h5>
+    <li>MongoDB is schema less. It is a document db in which one collection holds different documents.</li>
+    <li>Structure of a single object is clear in MongoDB.</li>
+    <li>There are no complex joins in MongoDB.</li>
+    <li>It is very easy to scale.</li>
+    <li>It uses internal memory for storing working sets and this is the reason of its fast access.</li><br>
+    <h2>How to install MongoDB on Windows</h2>
+    <p>Firstly you will have to download the latest release of MongoDB:</p>
+    <h5>How to download MongoDB</h5>
+    <p>You can download an appropriate version of MongoDB which your system supports, from the link<a href="https://www.mongodb.com/try/download/community" style="color: green;"> "http://www.mongodb.org/downloads"</a> to install the MongoDB on Windows. You should choose correct version of MongoDB acording to your computer's Window. If you are not sure what Window version are you using, open your command prompt and execute this command:
+    </p>
+    <div id="p02"><span>C:\ wmic os get osarchitecture</span>
+    </div><br>
+    <div id="p03"><span>OSArchitecture</span><br>
+                  <span>64 bit</span><br>
+                  <span>C:\ ></span><br>
+    </div><br>
+    <div class="w3-warning">
+        <p style="padding: 20px;"><strong>NOTE:</strong> MongoDB does not support Window XP.</p>
+    </div>
+    <h5>MongoDB for Windows Server 2008 R2 edition</h5>
+    <p>This version of MongoDB runs only on Window Server 2008 R2, Window7 64 bit, and the newer version of windows. You can't operate it on older version of windows.</p>
+    <h5>MongoDb for 64 bit Windows</h5>
+    <p>This version of MongoDB runs only on newer version of Windows contains 64 bit operating system.<br><br>
+        for example: Window Server 2008 R2, Window 7 64 bit etc.
+    </p>
+    <h5>MongoDb for 32 bit Windows</h5>
+    <p>This version of MongoDB runs on only 32 bit windows. 32 bit version of MongoDB is generally used in testing and development purposes because it supports databases smaller than 2 GB.</p>
+    <h5>How to install the downloaded file</h5>
+    <p>In Window explorer, locate the downloaded MongoDB msi file, double click on that file and follow the instructions appears on the screen. These instructions will guide you to complete the installation process.</p>
+    <div class="w3-warning">
+        <p style="padding: 20px;font-size: 13px;"><strong>NOTE:</strong>  If you want to move the MongoDB folder from default position to another position, it is necessary to issue the move command as an administrator. let us take an example to move the folder to C : \mongodb:</p>
+    </div>
+    <div id="p04"><span style="color: #000099;">Select</span> Start Menu > All Programs > Accessories 
+    </div><br>
+    <p>You can install MongoDB in any folder because it is self contained and does not have any other system dependency.</p>
+    <h5>How to set up the MongoDB environment</h5>
+    <p>A data directory is required in MongoDB to store all the information. Its by default data directory path is \data\db. you can create this folder by command prompt.</p>
+    <div id="p04"><span>md\data\db</span>
+    </div><br>
+    <P><strong>For example:</strong><br><br>
+        If you want to start MongoDB, run mongod.exe<br><br>
+        You can do it from command prompt.
+    </P>
+    <div id="p04"><span>C:\Program Files\MongoDB\bin\mongod.exe</span>
+    </div><br>
+    <p>This will start the mongoDB database process. If you get a message "waiting for connection" in the console output, it indicates that the mongodb.exe process is running successfully.<br><br>
+        <strong>For example:</strong><br><br>
+        When you connect to the MongoDB through the mongo.exe shell, you should follow these steps:<br><br>
+        <li>Open another command prompt.</li>
+        <li>At the time of connecting, specify the data directory if necessary.</li>
+    </p>
+    <div class="w3-warning">
+        <p style="padding: 20px;font-size: 13px;"><strong>NOTE:</strong> If you use the default data directory while MongoDB installation, there is no need to specify the data directory.</p>
+    </div>
+    <p><strong>For example:</strong></p>
+    <div id="p04"><span>C:\mongodb\bin\mongo.exe</span>
+    </div><br>
+    <p>If you use the different data directory while MongoDB installation, specify the directory when connecting.<br><br>
+        <strong>For example:</strong>
+    </p>
+    <div id="p04">C:\mongodb\bin\mongod.exe<span style="color: green;">-- dbpath d:\test\mongodb\data</span>
+    </div><br>
+    <p>If you have spaces in your path, enclose the entire path in double space.<br><br>
+        <strong>For example:</strong>
+    </p>
+    <div id="p04">C:\mongodb\bin\mongod.exe<span style="color: green;">-- dbpath "d: \ test\mongodb\data"</span>
+    </div><br>
+    <h5>How to configure directory and files</h5>
+    <p>First to create a configuration file and a directory path for MongoDB log output after that create a specific directory for MongoDB log files.</p>
+    <h2>MongoDB Compass</h2>
+    <p>MongoDB Compass is a GUI for MongoDB. It is also known as MongoDB GUI. MongoDB allows users to analyze the content of their stored data without any prior knowledge of MongoDB query syntax. When we explore exploring our data in the visual environment, we can use Compass GUI to optimize performance, manage indexes, and implement document-validation.<br><br>
+        All the versions of MongoDB Compass are opensource (i.e., we can freely deploy and view the repositories of all MongoDB GUI versions). The source repositories of MongoDB compass can be found on the following link of GitHub<br><br>
+        <a href="https://github.com/mongodb-js/compass/" style="color: green;">https://github.com/mongodb-js/compass/</a>
+    </p>
+    <h5 style="padding-bottom: 4px;">Available Compass Edition</h5>
+    <p>MongoDB GUI is available in the following four editions:</p>
+    <li style="padding-bottom: 6px;">Compass Community: This edition is designed for developing with MongoDB and includes a subset of the features of Compass.</li>
+    <li style="padding-bottom: 6px;">Compass: It is released as the full version of MongoDB Compass. It includes all the features and capabilities that MongoDB provides.</li>
+    <li style="padding-bottom: 6px;">Compass Randomly: It is limited to read operation only with all update and delete capabilities removed.</li>
+    <li>Compass Isolated: The Isolated edition of MongoDB compass doesn't start any network requests except to the MongoDB server to which MongoDB GUI connects. It is designed to use in highly secure environments.</li><br>
+    <h5 style="padding-bottom: 4px;">How to Download and Install MongoDB Compass</h5>
+    <p><span style="font-weight:bold;color:black">Step 1:</span> To download MongoDB Compass,you can use your preferred web browser,and Open the<a href="https://www.mongodb.com/try/download/compass?jmp=docs" style="color:green"> https://www.mongodb.com/download-center/compass?jmp=docs page.</a><br><br>
+       <span style="font-weight:bold;color:black">Step 2:</span> You need to select the installer and version you prefer. GUI installer are available as a .exe or .msi package or a .zip archive.<br><br>
+       <span style="font-weight:bold;color:black">Step 3:</span> Finally, Click on the download button.
+    </p>
+    <img src="assets/img/product/inspired-product/i91.png" style="width: 600px;" alt="post" ><br><br>
+    <p><span style="font-weight:bold;color:black">Step 4:</span> Click on the installer file after the download is complete.<br><br>
+       <span style="font-weight:bold;color:black">Step 5:</span> Follow the pop-ups to install MongoDB Compass GUI.<br><br>
+       <span style="font-weight:bold;color:black">Step 6:</span> Once it is installed, it launches and ask you to configure privacy settings and specify update preference.
+     </p>
+    <img src="assets/img/product/inspired-product/i92.png" style="width: 600px;" alt="post" ><br><br>
+    <h5 style="padding-bottom: 4px;">Update MongoDB Compass</h5>
+    <p>There are two ways we can use the updated version of MongoDB Compass<br><br>
+       1. We can download and install the latest released version of MongoDB GUI from the official website of MongoDB at any time. We need to check the S/W and H/W requirements for our OS and required version of MongoDB compass to ensure Compass GUI is compatible with our system.<br><br>
+       2. We can update Compass by enabling the automatic updates from the Help -> Privacy Settings as shown below.
+    </p>
+    <img src="assets/img/product/inspired-product/i93.png" style="width: 600px;" alt="post" >
+    <img src="assets/img/product/inspired-product/i94.png" style="width: 400px;" alt="post" ><br><br>
+    <h5 style="padding-bottom: 4px;">Establishing connection with MongoDB Compass.</h5>
+    <p>There are two methods to connect our deployment in MongoDB compass, either we can use the connection string provided on the MongoDB Atlas or we can fill our deployment information in specified fields.<br><br>
+        <strong>By Pasting Connection String.</strong><br><br>
+        <span style="font-weight:bold;color:black">Step 1:</span> When you log in to Compass, an initial dialogue will appear.<br><br>
+        <span style="font-weight:bold;color:black">Step 2:</span> To get the deployment connection string for an Atlas cluster, go to your Atlas cluster view.
+    </p>
+    <img src="assets/img/product/inspired-product/i95.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 3:</span> Click Connect for the cluster you want to connect.<br><br>
+    <img src="assets/img/product/inspired-product/i96.png" style="width: 400px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 4:</span> After that, click Connect with MongoDB Compass and copy the provided connection string.<br><br>
+    <img src="assets/img/product/inspired-product/i97.png" style="width: 400px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 5:</span> Click on connect button, to connect and navigate to the Compass GUI Home Page.<br><br>
+    <img src="assets/img/product/inspired-product/i98.png" style="width: 600px;" alt="post" ><br><br>
+    <p>The Compass Home screen displays the details about the MongoDB instance from which Compass is connected, which includes the connection name, the deployment type, hostname, and port, version of MongoDB, performance statistics, and a list of the instance's databases.</p>
+    <h5 style="padding-bottom: 4px;">Creating and Managing Database using Compass</h5>
+    <p>When you are connected to the MongoDB Atlas or Mongo Shell, the following window will appear. Inside this window, you can see the Database tab. The Database window shows the lists of all the existing databases for your MongoDB deployment.</p>
+    <img src="assets/img/product/inspired-product/i99.png" style="width: 600px;" alt="post" ><br><br>
+    <p>On the above window, when you select a database from the given list to view its collections. You can view database collection when you click the desired Database in the left navigation pan.</p>
+    <h5 style="padding-bottom: 4px;">Create a Database in Compass</h5>
+    <span style="font-weight:bold;color:black">Step 1:</span> Click on the Create Database button from the database tab. It will take you to the <b style="color: lightgray;">Create Database</b> pop-up dialogue.<br><br>
+    <img src="assets/img/product/inspired-product/i100.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 2:</span> In the appeared pop-up window, fill the Database and collection name to create a new database.<br><br>
+    <img src="assets/img/product/inspired-product/i101.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 3:</span> Finally, click on <b style="color: lightgray;">Create Database</b> button to create the Database and collection.<br><br>
+    <img src="assets/img/product/inspired-product/i102.png" style="width: 600px;" alt="post" ><br><br>
+    <h5 style="padding-bottom: 4px;">Drop a Database in Compass</h5>
+    <span style="font-weight:bold;color:black">Step 1:</span> Click on the trash icon that will appear when you hover over the Database name, after that a confirmation dialog appears.<br><br>
+    <img src="assets/img/product/inspired-product/i103.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 2:</span> In the pop-up window, enter the name of the Database that you want to delete.<br><br>
+    <img src="assets/img/product/inspired-product/i104.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 3:</span> Finally, click Drop Database button to delete the Database you selected.<br><br>
+    <img src="assets/img/product/inspired-product/i105.png" style="width: 600px;" alt="post" ><br><br>
+    <h5 style="padding-bottom: 4px;">Collections in MongoDB Compass</h5>
+    <p>The Collection window displays the list of all the existing collection and views from the database you have selected. It includes all the name and other related information for the selected collection or view.<br><br>
+        If you want to gain access to the collection of a database, click on the Database Name in the main Database view, or Click on the database in the left navigation pan.
+    </p>
+    <img src="assets/img/product/inspired-product/i106.png" style="width: 600px;" alt="post" ><br><br>
+    <p>The collection window displays the information like - Collection name, number of documents, size, number of indexes, size of indexes, and Collation properties for the collection.</p>
+    <h5 style="padding-bottom: 4px;">Create a Collection in MongoDB Compass</h5>
+    <span style="font-weight:bold;color:black">Step 1:</span> Click on the <b style="color: lightgray;">Create Collection</b> button.<br><br>
+    <img src="assets/img/product/inspired-product/i107.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 2:</span> After that, fill in the collection details in the <b style="color: lightgray;">Create Collection</b> dialog.<br><br>
+    <img src="assets/img/product/inspired-product/i108.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 3:</span> Now, click on <b style="color: lightgray;">Create Collection</b> to create the collection<br><br>
+    <img src="assets/img/product/inspired-product/i109.png" style="width: 600px;" alt="post" ><br><br>
+    <h5 style="padding-bottom: 4px;">Drop a Collection</h5>
+    <span style="font-weight:bold;color:black">Step 1:</span> In the collection window, click on the bin icon for the collection to delete. When you click on the trash icon, a dialog appears to ask your confirmation.<br><br>
+    <img src="assets/img/product/inspired-product/i110.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 2:</span> In the appeared pop-up dialogue, enter the name of the collection you want to delete from the database.<br><br>
+    <img src="assets/img/product/inspired-product/i111.png" style="width: 600px;" alt="post" ><br><br>
+    <span style="font-weight:bold;color:black">Step 3:</span> Finally, click on Drop Collection button to delete the collection.<br><br>
+    <img src="assets/img/product/inspired-product/i112.png" style="width: 600px;" alt="post" ><br><br>
+    <h5 style="padding-bottom: 4px;">Managing Documents in MongoDB Compass</h5>
+    <p>Documents are the records in a MongoDB collection. Documents are the basic unit of data in MongoDB. Using the document tab, we can perform the following tasks in our selected collection or view:<br><br>
+      <li style="padding-bottom: 6px;"><strong>View the documents:</strong> The Document tab provides three ways to access document in MongoDB Compass.</li>
+      <li style="padding-bottom: 6px;"><strong>List View</strong> - It is the default view of the Database in the MongoDB Compass. Document will be shown as individual members of the list. In the list view you can easily extend the embedded objects and arrays.</li>
+      <li style="padding-bottom: 6px;"><strong>JSON View</strong> - In this view documents will be shown as completely-formatted JSON objects. In this view, MongoDB Compass use extended JSON to display the data-types of field where the correct data types are used.</li>
+      <li style="padding-bottom: 6px;"><strong>Table View</strong> The table view display documents as a table row. The document fields are shown as a column in the table. When we use table view, we can easily find out the documents that contains specific field values.</li><br>
+        We can use View buttons to select which view we want to use:
+    </p>
+    <img src="assets/img/product/inspired-product/i113.png" style="width: 600px;" alt="post" ><br><br>
+    <li style="padding-bottom: 6px;"><strong>Insert the document: </strong>We can have two ways to insert documents into our collections:</li>
+    <li style="padding-bottom: 6px;"><strong>JSON Mode: </strong>It allows you to write or paste JSON documents in the editor. You can use this mode to insert one or many documents at once as an array in the database.</li>
+    <li style="padding-bottom: 6px;"><strong>Field-by-Field editor: </strong>You can create documents in more interactive way using this editor. It allows you to select all the field values and types. It supports only the insertion of a single document at a time.</li>
+    <li style="padding-bottom: 6px;"><strong>Modify the document: </strong>You can update existing document in your collection. When you make changes to your document, the MongoDB Compass performs a findAndModify operation to update the existing document.</li>
+    <li style="padding-bottom: 6px;"><strong>Clone the documents: </strong>You can insert new files and documents by cloning (i.e. by making an exact same copy of the document). You can copy the schema and values of an existing document/files in a collection.</li>
+    <li style="padding-bottom: 6px;"><strong>Delete the documents: </strong>We can delete the document/file depending of the tab whether we are viewing our documents in List, JSON, or Table view.</li>
+
+    </div>
+    </article>

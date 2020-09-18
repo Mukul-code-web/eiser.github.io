@@ -1,0 +1,6 @@
+.fa-times:hover{
+    cursor: pointer;
+}
+button:disabled{
+    cursor:no-drop;
+}

@@ -1,0 +1,70 @@
+<app-blogreplylist [blogcommentId]="bcID"></app-blogreplylist>
+<div id="p01">
+    <i class="fa fa-sort-up fa-2x" style="margin-left: 350px;color: black;"></i>
+    <div class="card" >
+        <div class="card-header card-header-danger">
+            <h5>Reply</h5>
+        </div>
+        <div class="card-body">
+          <form #CommentReplyForm="ngForm" (ngSubmit)="onSubmit(CommentReplyForm)">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Your Full name" #fullname="ngModel" [(ngModel)]="commentreplyservice.selectedReplyComment.fullname" required autocomplete="off"/>
+                    <span *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                    <span *ngIf="fullname.errors.required">Name is Required!!</span></span>
+                  </div>
+                </div>
+               <div class="col-md-6">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" #email="ngModel" [(ngModel)]="commentreplyservice.selectedReplyComment.email" required autocomplete="off" email/>
+                    <span *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <span *ngIf="email.errors.required">Email is Required!!</span>
+                    <span *ngIf="email.errors.email">Email is Invalid!!</span></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                 <div class="form-group">
+                    <input type="datetime-local"  class="form-control" name="date" id="date" #date="ngModel" [(ngModel)]="commentreplyservice.selectedReplyComment.date" required autocomplete="off">  
+                    <span *ngIf="date.invalid && (date.dirty || date.touched)">
+                    <span *ngIf="date.errors.required">Date is Required!!</span></span>
+                  </div>
+                </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                    <input type="text" class="form-control" name="image" id="image" placeholder="Your Image Path" #image="ngModel" [(ngModel)]="commentreplyservice.selectedReplyComment.image" autocomplete="off">
+                      <p style="font-size: 13px;" class="alert alert-info"><strong>NOTE:</strong> This field is optional.</p>
+                </div>
+                </div>
+               <div class="col-md-12">
+                <div class="form-group">
+                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message" #message="ngModel" [(ngModel)]="commentreplyservice.selectedReplyComment.message" required autocomplete="off"></textarea>
+                    <span *ngIf="message.invalid && (message.dirty || message.touched)">
+                    <span *ngIf="message.errors.required">Message is Required!!</span></span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                    <div style="background-color: lightgray;height: 100px;">
+                        <p class="rotate"><span style="font-weight: bold;font-family:Trattatello, fantasy;color:#88898a">{{bcID}}</span></p>
+                    </div><br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="commentId" name="commentId"  #commentId="ngModel" [(ngModel)]="commentreplyservice.selectedReplyComment.commentId" placeholder="CAPTCHA" required autocomplete="off"/>
+                        <span *ngIf="commentId.invalid && (commentId.dirty || commentId.touched)">
+                        <span *ngIf="commentId.errors.required">Captcha is Required!!</span></span>
+                      </div>
+                    </div>
+                <div class="col-md-6">
+                <button type="submit" value="submit" class="btn btn-primary" [disabled]="!CommentReplyForm.valid" id="hide">
+                      Submit Now
+                </button>
+                </div>
+                </div>
+          </form>
+          <div class="alert alert-info" *ngIf="showSuccessMessagee">
+            Reply successfully.
+        </div>
+        </div>
+      </div>
+      </div>
+      
+    

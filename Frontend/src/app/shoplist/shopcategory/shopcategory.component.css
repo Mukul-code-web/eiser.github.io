@@ -1,0 +1,9 @@
+a{
+    text-decoration: none;
+}
+.ti-shopping-cart,.ti-eye:hover,.fa-heart,.ti-heart:hover{
+    cursor: pointer;
+}
+.css:hover{
+    cursor: pointer;
+}

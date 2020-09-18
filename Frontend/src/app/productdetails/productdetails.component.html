@@ -1,0 +1,545 @@
+<div style="margin-top: 89px;">
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div class="banner_content d-md-flex justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+              <h2>Product Details</h2>
+              <p>Very us move be blessed multiply night</p>
+            </div>
+            <div class="page_link">
+              <a [routerLink]="['/Home']">Home</a>
+              <a [routerLink]="['/ProductDetails']">Product Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Single Product Area =================-->
+    <div *ngIf="this.productID===0" class="alert alert-danger">
+      <marquee direction="right">Your Cart is Empty.</marquee>
+    </div>
+    <div style="background-color: white;" *ngIf="this.productID>= 0">
+      <div class="product_image_area">
+        <div class="container">
+          <div class="row s_product_inner">
+            <div class="col-lg-5">
+
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 400px;">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" [src]="productData['imageurl']" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" [src]="productData['imageurl2']" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" [src]="productData['imageurl3']" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+              <div class="s_product_text">
+                <h3>{{productData['name']}}</h3>
+                <h2>{{productData['price'] | currency:'INR'}}</h2>
+                <ul class="list">
+                  <li>
+                    <a class="active" href="#">
+                      <span>Category</span> : Household</a>
+                  </li>
+                  <li>
+                    <a href="#" class="active"> <span>Availibility</span> : In Stock</a>
+                  </li>
+                </ul>
+                <p>
+                  {{productData['description']}}
+                </p>
+                
+                <span style="color: black;"><b style="color: black;">BEST OFFERS</b><i class="fa fa-tag" aria-hidden="true" style="margin-left: 7px;"></i>
+                </span>
+                <span class="row" style="margin-left: 0px;color: black;"> This product is already at its best price</span><br>
+
+                <div class="product_count">
+                  <label for="qty">Quantity:</label>
+                  <span>{{productData['qty']}}</span><i class="fa fa-plus-circle fa-1x" style="color:black"
+                    (click)="increament(productData)"></i>
+                  <i class="fa fa-minus-circle fa-1x" style="color:black" (click)="decreament(productData)"></i>
+                </div>
+
+                <div class="card_area">
+                  <a class="main_btn" (click)="handleAddtoCart(productData)">Add to Cart</a>
+                </div><br>
+
+                <div class="alert alert-info" *ngIf="showSuccessMessage">
+                  Item successfully added to cart.
+                </div>
+                <div class="alert alert-danger" *ngIf="serverErrorMessages && server">
+                  {{serverErrorMessages}}
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--================End Single Product Area =================-->
+
+      <!--================Product Description Area =================-->
+      <section class="product_description_area">
+        <div class="container">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Specification</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                aria-selected="false">Comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab"
+                aria-controls="review" aria-selected="false">Reviews</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <p>
+                {{productData['description']}}
+              </p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <h5>Width</h5>
+                      </td>
+                      <td>
+                        <h5>128mm</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>Height</h5>
+                      </td>
+                      <td>
+                        <h5>508mm</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>Depth</h5>
+                      </td>
+                      <td>
+                        <h5>85mm</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>Weight</h5>
+                      </td>
+                      <td>
+                        <h5>52gm</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>Quality checking</h5>
+                      </td>
+                      <td>
+                        <h5>yes</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>Freshness Duration</h5>
+                      </td>
+                      <td>
+                        <h5>03days</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>When packeting</h5>
+                      </td>
+                      <td>
+                        <h5>Without touch of hand</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5>Each Box contains</h5>
+                      </td>
+                      <td>
+                        <h5>60pcs</h5>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="row">
+
+                <div class="col-lg-6">
+                  <div class="comment_list">
+                    <div class="review_item" *ngFor="let com of commentservice.comments let i = index">
+                      <div class="media">
+                        <div class="d-flex">
+                          <img [src]="com.image" *ngIf="com.image!=''" width="70" height="70" style="border-radius: 100%;">
+                          <img [src]="url" *ngIf="com.image===''" width="70" height="70" style="border-radius: 100%;">
+                        </div>
+                        <div class="media-body">
+                          <h4>{{com.fullname}}</h4>
+                          <h6 style="font-size: 10px;">{{com.date}}</h6>
+                          <h5>{{com.email}}</h5>
+                          <a class="reply_btn" role="tab" (click)="togglePanel[i] = !togglePanel[i]">Reply</a>
+                        </div>
+                      </div>
+                      <p>
+                        {{com.message}}
+                      </p>
+                      <app-replyform [commentId]="com._id" *ngIf="togglePanel[i]"></app-replyform>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="review_box">
+                    <h4>Post a comment</h4>
+
+                    <form class="row contact_form" #CommentForm="ngForm" (ngSubmit)="onSubmit(CommentForm)" enctype="multipart/form-data">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="datetime-local"  class="form-control" name="date" #date="ngModel" [(ngModel)]="commentservice.selectedComment.date" required>
+                          <span *ngIf="date.invalid && (date.dirty || date.touched)">
+                          <span *ngIf="date.errors.required">Date is Required!!</span></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                        <input type="text" class="form-control" name="image" #image="ngModel" [(ngModel)]="commentservice.selectedComment.image" placeholder="Your Image Path" autocomplete="off">
+                        <div class="info">
+                          <p><strong>NOTE:</strong> This field is optional.</p>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="fullname" name="fullname" #fullname="ngModel" [(ngModel)]="commentservice.selectedComment.fullname" placeholder="Your Full name"  required autocomplete="off"/>
+                          <span *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                          <span *ngIf="fullname.errors.required">Name is Required!!</span></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="commentservice.selectedComment.email" required="required" email autocomplete="off"
+                            placeholder="Email Address" />
+                            <span *ngIf="email.invalid && (email.dirty || email.touched)">
+                              <span *ngIf="email.errors.required">Email is Required!!</span>
+                              <span *ngIf="email.errors.email">Email is Invalid!!</span></span>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="phonenumber" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="commentservice.selectedComment.phonenumber" minlength="6" maxlength="10" required autocomplete="off"
+                            placeholder="Phone Number" />
+                            <span *ngIf="phonenumber.invalid && (phonenumber.dirty || phonenumber.touched)">
+                              <span *ngIf="phonenumber.errors.required">Phone-No is Required!!</span>
+                              <span *ngIf="phonenumber.errors.minlength">Phone-No must be at least 6 characters long!!</span>
+                              <span *ngIf="phonenumber.errors.maxlength">Phone-No must be max 10 characters long!!</span></span>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea class="form-control" name="message" id="message" rows="1" #message="ngModel" [(ngModel)]="commentservice.selectedComment.message" required autocomplete="off"
+                            placeholder="Message"></textarea>
+                            <span *ngIf="message.invalid && (message.dirty || message.touched)">
+                              <span *ngIf="message.errors.required">Message is Required!!</span></span>
+                          </div>
+                      </div>
+                      <div class="col-md-12 text-right">
+                        <button type="submit" value="submit" class="btn btn-danger" [disabled]="!CommentForm.valid">
+                          Submit Now
+                        </button>
+                      </div>
+                    </form>
+                    <div class="alert alert-info" *ngIf="showSuccessMessagee">
+                      Commented successfully.
+                  </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="row total_rate">
+                    <div class="col-6">
+                      <h6 style="text-align: center;">Based on {{ReviewsCount.count}} Reviews</h6>
+                      <div class="box_total">
+                        <h5>Overall</h5>
+                        <h4>{{Average[0].avg}}</h4>
+                        <h6>({{ReviewsCount.count}} Reviews)</h6>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="rating_list">
+                        <h3>Based on these Stars</h3>
+                        <ul class="list">
+                          <li>
+                            <a>5 Star
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i> Extraordinary</a>
+                          </li>
+                          <li>
+                            <a>4 Star
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i> Excellent</a>
+                          </li>
+                          <li>
+                            <a>3 Star
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i> Very Good</a>
+                          </li>
+                          <li>
+                            <a>2 Star
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i> Good</a>
+                          </li>
+                          <li>
+                            <a>1 Star
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i> Fair</a>
+                          </li>
+                          <li>
+                            <a>0 Star
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i>
+                              <i class="fa fa-star" style="color: lightgrey;"></i> Poor</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="review_list">
+                    <div class="review_item" *ngFor="let rev of reviewservice.Reviews">
+                      <div class="media">
+                        <div class="d-flex">
+                          <img [src]="rev.image" *ngIf="rev.image!=''" width="70" height="70" style="border-radius: 100%;">
+                          <img [src]="url" *ngIf="rev.image===''" width="70" height="70" style="border-radius: 100%;">
+                        </div>
+                        <div class="media-body">
+                          <h4>{{rev.name}}</h4>
+                          <h5>{{rev.emailaddress}}</h5>
+                          <span style="color:#707070 ;">{{rev.reviewstar}}</span>
+                          <i class="fa fa-star" style="padding: 5px;"></i>
+                        </div>
+                      </div>
+                      <p>{{rev.reviewmessage}}</p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="review_box">
+                    <h4>Add a Review</h4>
+                    <p>Your Rating:</p>
+                    <span class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+                     <span (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}">
+                     <i class="fa fa-star"></i>
+                     </span> 
+                    </span>
+                    <p style="margin-left: 10px;">{{selectedValue}}<span style="margin-left: 3px;color: #707070;">Star</span></p>
+
+
+                    <form class="row contact_form" #Review="ngForm" (ngSubmit)="onSubmitt(Review)">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input  type="number" class="form-control" id="reviewstar" name="reviewstar" placeholder="Confirm Your Star" #reviewstar="ngModel" [(ngModel)]="reviewservice.selectedReview.reviewstar" min="0" max="5" required>
+                          <span *ngIf="reviewstar.invalid && (reviewstar.dirty || reviewstar.touched)">
+                          <span *ngIf="reviewstar.errors.required">This Field is Required!!</span></span>  
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                        <input type="text" class="form-control" name="image" #image="ngModel" [(ngModel)]="reviewservice.selectedReview.image" placeholder="Your Image Path" autocomplete="off">
+                        <div class="info">
+                          <p><strong>NOTE:</strong> This field is optional.</p>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name" #name="ngModel" [(ngModel)]="reviewservice.selectedReview.name" autocomplete="off" required>
+                          <span *ngIf="name.invalid && (name.dirty || name.touched)">
+                          <span *ngIf="name.errors.required">Name is Required!!</span></span> 
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email Address" #emailaddress="ngModel" [(ngModel)]="reviewservice.selectedReview.emailaddress" autocomplete="off" required="required" email>
+                          <span *ngIf="emailaddress.invalid && (emailaddress.dirty || emailaddress.touched)">
+                          <span *ngIf="emailaddress.errors.required">Email is Required!!</span>
+                          <span *ngIf="emailaddress.errors.email">Email is Invalid!!</span></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" placeholder="Phone Number" #mobilenumber="ngModel" [(ngModel)]="reviewservice.selectedReview.mobilenumber" autocomplete="off" minlength="6" maxlength="10" required>
+                          <span *ngIf="mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched)">
+                          <span *ngIf="mobilenumber.errors.required">Phone-No is Required!!</span>
+                          <span *ngIf="mobilenumber.errors.minlength">Phone-No must be at least 6 characters long!!</span>
+                          <span *ngIf="mobilenumber.errors.maxlength">Phone-No must be max 10 characters long!!</span></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea class="form-control" name="reviewmessage" id="reviewmessage" rows="1" placeholder="Review" #reviewmessage="ngModel" [(ngModel)]="reviewservice.selectedReview.reviewmessage" required></textarea>
+                          <span *ngIf="reviewmessage.invalid && (reviewmessage.dirty || reviewmessage.touched)">
+                          <span *ngIf="reviewmessage.errors.required">Review is Required!!</span></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-right">
+                        <button type="submit" value="submit" class="btn btn-success" [disabled]="!Review.valid">
+                          Submit Now
+                        </button>
+                      </div>
+                    </form>
+                    
+                    <div class="alert alert-info" *ngIf="showMessage">
+                      Review successfully.
+                  </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+<!--================End Product Description Area =================-->
+
+<!--================ start footer Area  =================-->
+<footer class="footer-area section_gap">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-7 single-footer-widget">
+        <h4 style="margin-left: 10px;">CONTACT US</h4>
+        <table>
+          <tr>
+            <th>
+          <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+            </th>
+            <th>
+          <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+          </th>
+          </tr>
+         <tr>
+           <th>
+            <i class="fa fa-phone fa-2x" style="color: white;"></i>
+           </th>
+           <th>
+            <h6 style="color: white;">+91-7355876362</h6>
+            </th>
+         </tr>
+         <tr>
+           <th>
+            <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+           </th>
+           <th>
+            <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+           </th>
+         </tr>
+       </table>
+      </div>
+     
+      <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+        <h4>NEWSLETTER</h4>
+        <p>You can trust us. we only send promo offers,</p>
+        <div class="form-wrap" id="mc_embed_signup">
+          <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmittt(SubscribedForm)">
+            <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+            <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+              </span>
+            <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+            <div style="position: absolute; left: -5000px;">
+              <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+            </div>
+            <div class="info"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+        <h4>ABOUT</h4>
+        <table>
+          <tr>
+            <td>
+              <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    
+    </div>
+
+    <div class="footer-bottom row align-items-center">
+      <p class="footer-text m-0 col-lg-8 col-md-12">
+Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+      <div class="col-lg-4 col-md-12 footer-social">
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+        <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+        <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+    
+  </div>
+</footer>

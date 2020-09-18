@@ -1,0 +1,18 @@
+img{
+    background-color:#f2e5d9;
+    padding: 20px;
+    width:250px;
+    height: 300px;
+  }
+  a{
+    text-decoration: none;
+}
+.ti-shopping-cart,.ti-eye:hover,.fa-heart,.ti-heart:hover{
+    cursor: pointer;
+}
+.css:hover{
+    cursor: pointer;
+}
+.product-btm{
+    height: 142px;
+}

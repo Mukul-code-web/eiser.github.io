@@ -1,0 +1,6 @@
+td{
+    padding: 40px;;
+}
+button:disabled{
+    cursor:no-drop;
+}

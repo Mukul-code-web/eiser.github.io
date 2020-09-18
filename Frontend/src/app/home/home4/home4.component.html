@@ -1,0 +1,21 @@
+<div class="single-blog">
+    <div class="thumb">
+      <img class="img-fluid" [src]="productItem.imageurl" alt="">
+    </div>
+    <div class="short_details">
+      <div class="meta-top d-flex">
+        <a>By Admin</a>
+        <a><i class="ti-comments-smiley"></i>{{BlogCommentsCount.count}} Comments</a>
+      </div>
+      <a class="d-block">
+        <h4>{{productItem.name}}</h4>
+      </a>
+      <div class="text-wrap">
+        <p>
+         To read full article pLease click the given link.
+        </p>
+      </div>
+      <a  class="blog_btn" (click)="getNavigation('BlogDetails',productItem._id)" style="cursor:pointer">Learn More <span class="ml-2 ti-arrow-right"></span></a>
+    </div>
+
+    

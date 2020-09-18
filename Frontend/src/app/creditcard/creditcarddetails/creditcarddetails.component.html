@@ -1,0 +1,156 @@
+<div class="container" style="margin-top: 89px;" >
+    <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="bg-white rounded-lg shadow-sm p-5">
+              <!-- Credit card form content -->
+              <div class="tab-content">
+                <h3 style="text-align: center;">Add New Credit/Debit Card</h3><br>
+                <h1><img class="img-fluid" src="assets/img/product/credit/creditcard.jpg" alt="" /></h1><br><br>
+      
+                <!-- credit card info-->
+                <div id="nav-tab-card" class="tab-pane fade show active">
+                  <form role="form" #CardForm="ngForm" (ngSubmit)="onSubmitt(CardForm)">
+                    <div class="form-group">
+                      <label for="username">Full Name (on the card)</label>
+                      <input type="text" name="username" placeholder="Card Name" required class="form-control" autocomplete="off" #username="ngModel" [(ngModel)]="creditcardservice.selectedCreditCard.username">
+                      <span *ngIf="username.invalid && (username.dirty || username.touched)">
+                      <span *ngIf="username.errors.required">Name is Required!!</span></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="cardNumber">Card Number</label>
+                      <div class="input-group">
+                        <input type="password" name="cardNumber" placeholder="Your card number" class="form-control" required autocomplete="off" minlength="16" maxlength="16" #cardNumber="ngModel" [(ngModel)]="creditcardservice.selectedCreditCard.cardNumber">
+                        <div class="input-group-append">
+                          <span class="input-group-text text-muted">
+                              <i class="fa fa-cc-visa mx-1"></i>
+                              <i class="fa fa-cc-amex mx-1"></i>
+                              <i class="fa fa-cc-mastercard mx-1"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <span *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)">
+                        <span *ngIf="cardNumber.errors.required">CardNumber-No is Required!!</span>
+                        <span *ngIf="cardNumber.errors.minlength">CardNumber-No must be at least 16 characters long!!</span>
+                        <span *ngIf="cardNumber.errors.maxlength">CardNumber-No must be max 16 characters long!!</span></span>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                          <label class="hidden-xs">Expiration</label>
+                          <div class="input-group">
+                            <input type="number" placeholder="MM" name="month" class="form-control" required min="1" max="12" #month="ngModel" [(ngModel)]="creditcardservice.selectedCreditCard.month">
+                            <input type="number" placeholder="YY" name="year" class="form-control" required min="20" max="30" #year="ngModel" [(ngModel)]="creditcardservice.selectedCreditCard.year">
+                          </div>
+                          <span *ngIf="month.invalid && (month.dirty || month.touched)">
+                            <span *ngIf="month.errors.required">This field is Required!!</span></span>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group mb-4">
+                          <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                                                      <i class="fa fa-question-circle" (click)="function()" style="cursor: pointer;"></i>
+                                                  </label>
+                          <input type="text" class="form-control" name="cvv" #cvv="ngModel" [(ngModel)]="creditcardservice.selectedCreditCard.cvv" placeholder="004">
+                          <p style="font-size: 11px;"><strong>NOTE:</strong> This field is optional.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="subscribe btn  btn-block rounded-pill shadow-sm" style="background-color: #00e6b8;color: white;font-weight: bold;" [disabled]="!CardForm.valid"> SAVE  </button><br>
+                    <a [routerLink]="['/CreditCard']" style="text-decoration: none;" ><button class="subscribe btn  btn-block rounded-pill shadow-sm" style="background-color: white;color: black;font-weight: bold;border: 1px solid lightgray;"> CANCEL  </button></a>
+                  </form><br>
+                  <div class="alert alert-info" *ngIf="showSuccessMessagee" style="text-align: center;">
+                    Saved successfully
+                </div>
+                </div>
+                <!-- End -->
+              </div>
+              <!-- End -->
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+       
+
+<footer class="footer-area section_gap">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-lg-3 col-md-7 single-footer-widget">
+          <h4 style="margin-left: 10px;">CONTACT US</h4>
+          <table>
+            <tr>
+              <th>
+            <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+              </th>
+              <th>
+            <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+            </th>
+            </tr>
+           <tr>
+             <th>
+              <i class="fa fa-phone fa-2x" style="color: white;"></i>
+             </th>
+             <th>
+              <h6 style="color: white;">+91-7355876362</h6>
+              </th>
+           </tr>
+           <tr>
+             <th>
+              <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+             </th>
+             <th>
+              <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+             </th>
+           </tr>
+         </table>
+        </div>
+       
+        <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+          <h4>NEWSLETTER</h4>
+          <p>You can trust us. we only send promo offers,</p>
+          <div class="form-wrap" id="mc_embed_signup">
+            <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+              <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+              <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                </span>
+              <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+              </div>
+              <div class="info"></div>
+            </form>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+          <h4>ABOUT</h4>
+          <table>
+            <tr>
+              <td>
+                <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+      </div>
+  
+      <div class="footer-bottom row align-items-center">
+        <p class="footer-text m-0 col-lg-8 col-md-12">
+  Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+        <div class="col-lg-4 col-md-12 footer-social">
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+          <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+          <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+      
+    </div>
+  </footer>

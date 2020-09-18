@@ -1,0 +1,314 @@
+<article class="blog_item">
+    <div class="blog_item_img">
+        <img src="assets/img/product/inspired-product/i72.jpg" alt="post">
+    </div>
+    
+    <div class="blog_details">
+    
+        <h2>Javascript Tutorial</h2>
+        <p style="font-size: 15px;">JavaScript (js) is a light-weight object-oriented programming language which is used by several websites for scripting the webpages. It is an interpreted, full-fledged programming language that enables dynamic interactivity on websites when applied to an HTML document. It was introduced in the year 1995 for adding programs to the webpages in the Netscape Navigator browser. Since then, it has been adopted by all other graphical web browsers. With JavaScript, users can build modern web applications to interact directly without reloading the page every time. The traditional website uses js to provide several forms of interactivity and simplicity.<br><br>
+            Although, JavaScript has no connectivity with Java programming language. The name was suggested and provided in the times when Java was gaining popularity in the market. In addition to web browsers, databases such as CouchDB and MongoDB uses JavaScript as their scripting and query language.
+</p><br>
+
+<h2>JavaScript Can Change HTML Content</h2>
+<p style="font-size: 15px;">One of many JavaScript HTML methods is <code class="w3-codespan">getElementById()</code>.</p>
+<p style="font-size: 15px;">The example below &quot;finds&quot; an HTML element (with id=&quot;demo&quot;), 
+and changes the element content (innerHTML) to &quot;Hello JavaScript&quot;:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr>
+<code>
+ document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript&quot;;
+</code>
+</div><br><br>
+
+<h2>JavaScript Can Change HTML Styles (CSS)</h2>
+<p style="font-size: 15px;">Changing the style of an HTML element, is a variant of changing an HTML 
+attribute:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr>
+<code>
+ document.getElementById(&quot;demo&quot;).style.fontSize = &quot;35px&quot;;
+</code>
+</div><br><br>
+
+<h2>JavaScript Can Hide HTML Elements</h2>
+<p style="font-size: 15px;">Hiding HTML elements can be done by changing the <code class="w3-codespan">display</code> style:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr>
+<code>
+ document.getElementById(&quot;demo&quot;).style.display = &quot;none&quot;;
+</code>
+</div><br><br>
+
+<h2>JavaScript Can Show HTML Elements</h2>
+<p style="font-size: 15px;">Showing hidden HTML elements can also be done by changing the <code class="w3-codespan">display</code> style:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr>
+<code>
+ document.getElementById(&quot;demo&quot;).style.display = "block";
+</code>
+</div><br><br>
+
+<h2>JavaScript Where To</h2>
+<h5>The &lt;script&gt; Tag</h5>
+<p style="font-size: 15px;">In HTML, JavaScript code is inserted between <code class="w3-codespan">&lt;script&gt;</code> and <code class="w3-codespan">&lt;/script&gt;</code> tags.</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr>
+<code>
+&lt;script&gt;<br>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;My First JavaScript&quot;;<br>
+&lt;/script&gt;
+</code>
+</div><br>
+
+<h5>JavaScript Functions and Events</h5>
+<p style="font-size: 15px;">A JavaScript <code class="w3-codespan">function</code> is a block of JavaScript code, that can be executed when &quot;called&quot; for.<br>
+    For example, a function can be called when an <b style="color: black;">event</b> occurs, like when the user clicks a button.</p>
+
+<h5>JavaScript in &lt;head&gt; or &lt;body&gt;</h5>
+<p style="font-size: 15px;">You can place any number of scripts in an HTML document.<br>
+    Scripts can be placed in the <code class="w3-codespan">&lt;body&gt;</code>, or in the <code class="w3-codespan">&lt;head&gt;</code> section of an HTML page, or in both.</p>
+
+<h5>JavaScript in &lt;head&gt;</h5>
+<p style="font-size: 15px;">In this example, a JavaScript <code class="w3-codespan">function</code> is placed in the <code class="w3-codespan">&lt;head&gt;</code> section 
+of an HTML page.<br>
+The function is invoked (called) when a button is clicked:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<p>&lt;head&gt;<br>
+&lt;script&gt;<br>
+function myFunction() &#x0007B;<br>
+&nbsp;&nbsp;document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;<br>
+&#x0007D;<br>
+&lt;/script&gt;<br>
+&lt;/head&gt;<br>&lt;body&gt;<br><br>
+&lt;h1&gt;A Web Page&lt;/h1&gt;<br>&lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;<br>&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Try 
+it&lt;/button&gt;<br><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+
+<h5>JavaScript in &lt;body&gt;</h5>
+<p style="font-size: 15px;">In this example, a JavaScript <code class="w3-codespan">function</code> is placed in the <code class="w3-codespan">&lt;body&gt;</code> section of an HTML page.<br>
+    The function is invoked (called) when a button is clicked:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;
+<br><br>&lt;h1&gt;A Web Page&lt;/h1&gt;<br>
+  &lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;<br>
+  &lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Try 
+it&lt;/button&gt;<br>
+ <br>&lt;script&gt;<br>
+function myFunction() &#x0007B;<br>
+  &nbsp;document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;<br>
+  &#x0007D;<br>
+&lt;/script&gt;<br>
+ <br>&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+
+<h5>External JavaScript</h5>
+<p style="font-size: 15px;">Scripts can also be placed in external files:</p>
+<div class="w3-codespan w3-border">
+<h4>External file: myScript.js</h4><hr>
+<code>
+function myFunction() &#x0007B;<br>
+&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;<br>
+&#x0007D;
+</code>
+</div><br>
+<p style="font-size: 15px;">External scripts are practical when the same code is used in many different web pages. </p>
+<p style="font-size: 15px;">JavaScript files have the file extension <strong>.js</strong>.</p>
+<p style="font-size: 15px;">To use an external script, put the name of the script file in the <code class="w3-codespan">src</code> (source) attribute of 
+a <code class="w3-codespan">&lt;script&gt;</code> tag:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;
+</code>
+</div><br>
+<p style="font-size: 15px;">You can place an external script reference in <code class="w3-codespan">&lt;head&gt;</code> or <code class="w3-codespan">&lt;body&gt;</code> as you like.</p>
+<p style="font-size: 15px;">The script will behave as if it was located exactly where the <code class="w3-codespan">&lt;script&gt;</code> tag is located.</p>
+
+<h5>External JavaScript Advantages</h5>
+<p style="font-size: 15px;">Placing scripts in external files has some advantages:</p>
+ <li>It separates HTML and code</li>
+ <li>It makes HTML and JavaScript easier to read and maintain</li>
+ <li>Cached JavaScript files can speed up page loads</li><br>
+<p style="font-size: 15px;">To add several script files to one page&nbsp; - use several script tags:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;script src=&quot;myScript1.js&quot;&gt;&lt;/script&gt;<br>
+&lt;script src=&quot;myScript2.js&quot;&gt;&lt;/script&gt;
+</code>
+</div>
+<br>
+
+<h5>External References</h5>
+<p style="font-size: 15px;">External scripts can be referenced with a full URL or with a path relative to the current web 
+page.</p>
+<p style="font-size: 15px;">This example uses a full URL to link to a script: </p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;script src=&quot;https://www.w3schools.com/js/myScript1.js&quot;&gt;&lt;/script&gt;
+</code>
+</div><br>
+<p style="font-size: 15px;">This example uses a script located in a specified folder on the current web 
+site:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;script src=&quot;/js/myScript1.js&quot;&gt;&lt;/script&gt;
+</code>
+</div><br>
+<p style="font-size: 15px;">This example links to a script located in the same folder as the current page:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;script src=&quot;myScript1.js&quot;&gt;&lt;/script&gt;
+</code>
+</div><br>
+
+<h2>JavaScript Output</h2>
+<h5>JavaScript Display Possibilities</h5>
+<p style="font-size: 15px;">JavaScript can &quot;display&quot; data in different ways:</p>
+<li>Writing into an HTML element, using <code class="w3-codespan">innerHTML</code>.</li>
+<li>Writing into the HTML output using <code class="w3-codespan">document.write()</code>.</li>
+<li>Writing into an alert box, using <code class="w3-codespan">window.alert()</code>.</li>
+<li>Writing into the browser console, using <code class="w3-codespan">console.log()</code>.</li><br>
+
+<h5>Using innerHTML</h5>
+<p style="font-size: 15px;">To access an HTML element, JavaScript can use the <code class="w3-codespan">document.getElementById(id)</code> method. </p>
+<p style="font-size: 15px;">The <code class="w3-codespan">id</code> attribute defines the HTML element. The <code class="w3-codespan">innerHTML</code>  property defines the HTML content:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+ &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>
+&lt;body&gt;<br>
+<br>
+&lt;h1&gt;My First Web Page&lt;/h1&gt;<br>
+ &lt;p&gt;My First Paragraph&lt;/p&gt;<br>
+    <br>&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;<br>
+<br>
+&lt;script&gt;<br>
+ document.getElementById(&quot;demo&quot;).innerHTML = 5 + 6;<br>
+    &lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+
+<h5>Using document.write()</h5>
+<p style="font-size: 15px;">For testing purposes, it is convenient to use <code class="w3-codespan">document.write()</code>:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+ &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>
+&lt;body&gt;<br><br>&lt;h1&gt;My First Web Page&lt;/h1&gt;<br>
+ &lt;p&gt;My first paragraph.&lt;/p&gt;<br>
+ <br>&lt;script&gt;<br>document.write(5 + 6);<br>&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+<div class="w3-warning">
+<p style="font-size: 15px;padding: 30px;">Using document.write() after an HTML document is loaded, will <strong>delete all existing HTML</strong>:</p>
+</div>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br><br>
+&lt;h1&gt;My First Web Page&lt;/h1&gt;<br>
+ &lt;p&gt;My first paragraph.&lt;/p&gt;<br><br>
+&lt;button type=&quot;button&quot; onclick=&quot;document.write(5 + 6)&quot;&gt;Try it&lt;/button&gt;<br><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+
+<h5>Using window.alert()</h5>
+<p style="font-size: 15px;">You can use an alert box to display data:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br><br>
+&lt;h1&gt;My First Web Page&lt;/h1&gt;<br>&lt;p&gt;My first paragraph.&lt;/p&gt;<br>
+ <br>
+&lt;script&gt;<br>window.alert(5 + 6);<br>
+&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+<p style="font-size: 15px;">You can skip the <code class="w3-codespan">window</code> keyword.</p>
+<p style="font-size: 15px;">In JavaScript, the window object is the global scope object, that means that variables, properties, and methods by default belong to the window object.
+This also means that specifying the <code class="w3-codespan">window</code> keyword is optional:</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br><br>
+&lt;h1&gt;My First Web Page&lt;/h1&gt;<br>&lt;p&gt;My first paragraph.&lt;/p&gt;<br>
+ <br>
+&lt;script&gt;<br>alert(5 + 6);<br>
+&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+
+<h5>Using console.log()</h5>
+<p style="font-size: 15px;">For debugging purposes, you can call the <code class="w3-codespan">console.log()</code> method
+in the browser to display data.</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+ <br>
+&lt;script&gt;<br>
+console.log(5 + 6);<br>
+&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div><br>
+
+<h5>JavaScript Print</h5>
+<p style="font-size: 15px;">JavaScript does not have any print object or print methods.</p>
+<p style="font-size: 15px;">You cannot access output devices from JavaScript.</p>
+<p style="font-size: 15px;">The only exception is that you can call the <code class="w3-codespan">window.print()</code> method in
+the browser to print the content of the current window.</p>
+<div class="w3-codespan w3-border">
+<h4>Example</h4><hr> 
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>&lt;body&gt;<br><br>
+&lt;button onclick=&quot;window.print()&quot;&gt;Print this page&lt;/button&gt;<br><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+</div>
+
+
+</div>
+</article>

@@ -1,0 +1,10 @@
+form(method='post' action='/profile' enctype='multipart/form-data')
+  label(style='font-weight: bold;') #{title} : 
+  input(type='file' name='image' style='border:1px solid grey;padding:10px')
+  br
+  br
+  button.btn.btn-primary(type='submit' style='margin-left:85px;') Submit
+  <br>
+  <br>
+  label #{success}
+  label #{records}

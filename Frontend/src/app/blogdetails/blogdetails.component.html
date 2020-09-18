@@ -1,0 +1,476 @@
+<div style="margin-top: 89px;">
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+              <div class="container">
+                <div
+                  class="banner_content d-md-flex justify-content-between align-items-center"
+                >
+                  <div class="mb-3 mb-md-0">
+                    <h2>Blog Details</h2>
+                    <p>Very us move be blessed multiply night</p>
+                  </div>
+                  <div class="page_link">
+                    <a [routerLink]="['/Home']">Home</a>
+                    <a [routerLink]="['/Blog']">Blog </a>
+                    <a [routerLink]="['/BlogDetails/:id']">Blog Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--================End Home Banner Area =================-->
+      
+          <!--================Blog Area =================-->
+          <div *ngIf="this.blogID===0" class="alert alert-danger">
+            <marquee direction="right">Your Cart is Empty.</marquee>
+          </div>
+          <section class="blog_area single-post-area section_gap" style="background-color: white;" *ngIf="this.blogID>= 0">
+                  <div class="container">
+                          <div class="row">
+                                  <div class="col-lg-8 posts-list">
+                                          <div class="single-post">
+                                                          <div class="feature-img">
+                                                                  <img class="img-fluid" [src]="blogData['imageurl']" alt="">
+                                                          </div>
+                                                  <div class="blog_details">
+                                                          <h2>{{blogData['name']}}</h2>
+                                <ul class="blog-info-link mt-3 mb-4">
+                                    <li><a href="#"><i class="ti-user"></i>{{blogData['category']}}</a></li>
+                                    <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
+                                  </ul>
+                                <p class="excert">{{blogData['description']}}</p>
+                                                        
+                        </div>
+                        </div>
+                        <div class="navigation-top">
+                          <div class="d-sm-flex justify-content-between text-center">
+                            <p class="like-info"><span class="align-middle">
+                              <i *ngIf="addedToWishlist" class="fa fa-heart"  style="color:red;font-size: 50px;"></i>
+                              <i class="fa fa-heart-o" *ngIf="!addedToWishlist" (click)="function0()"></i></span> Mukul and {{LikeCount.count}} people like this
+                            </p>
+                            <div class="col-sm-4 text-center my-2 my-sm-0">
+                              <p class="comment-count"><span class="align-middle"><i class="ti-comment" style="color: black;"></i></span> {{BlogCommentsCount.count}} Comments</p>
+                            </div>
+                            <ul class="social-icons">
+                              <li><a href="https://www.facebook.com/"><i class="ti-facebook"></i></a></li>
+                              <li><a href="https://www.twitter.com/"><i class="ti-twitter-alt"></i></a></li>
+                              <li><a href="https://www.instagram.com/"><i class="ti-instagram"></i></a></li>
+                              <li><a href="https://www.wordpress.com/"><i class="ti-wordpress"></i></a></li>
+                            </ul>
+                          </div>
+                          
+                          <div class="alert alert-danger" *ngIf="serverErrorMessages && server">
+                            {{serverErrorMessages}}
+                          </div>
+      
+                          <div class="navigation-area">
+                             
+                                 
+                                <nav class="blog-pagination justify-content-center d-flex">
+                                  <ul class="pagination">
+                                      <li class="page-item">
+                                          <a (click)="function()" class="page-link" aria-label="Previous">
+                                              <span aria-hidden="true">
+                                                  <span class="ti-arrow-left" style="color: black;"></span>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      <li class="page-item active">
+                                          <a [routerLink]="" class="page-link">1</a>
+                                      </li>
+                                      <li class="page-item">
+                                          <a (click)="function()"  class="page-link">2</a>
+                                      </li>
+                                      <li class="page-item">
+                                          <a (click)="function()"  class="page-link" aria-label="Next">
+                                              <span aria-hidden="true">
+                                                  <span class="ti-arrow-right" style="color: black;"></span>
+                                              </span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </nav>
+                              
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="blog-author">
+                          <div class="media align-items-center">
+                            <img src="assets/img/product/inspired-product/i9.jpg" alt="">
+                            <div class="media-body">
+                              <a>
+                                <h4>Mukul Sharma(Admin)</h4>
+                              </a>
+                              <p>In 1993 Rob Palmer began working for a company in London where he wrote a quarterly publication for the company and posted it on their website. Considering the World Wide Web was going open source, the company decided to continue this quarterly publication as a free online journal—or what’s now known as a blog.</p>
+                            </div>
+                          </div>
+                        </div>
+      
+                                          <div class="comments-area">
+                                                  <h4>{{BlogCommentsCount.count}} Comments</h4>
+                                                 
+            
+                                <div class="comment-list" *ngFor="let bcom of blogcommentservice.blogcomments let i=index">
+                                <div class="single-comment justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="thumb">
+                                          <img [src]="bcom.image" *ngIf="bcom.image!=''" width="70" height="70" style="border-radius: 100%;">
+                                          <img [src]="url" *ngIf="bcom.image===''" width="70" height="70" style="border-radius: 100%;">
+                                        </div>
+
+                                        <div class="desc">
+                                            <p class="comment">
+                                              {{bcom.message}}
+                                            </p>
+          
+                                            <div class="d-flex justify-content-between">
+                                              <div class="d-flex align-items-center">
+                                                <h5>
+                                                  <a>{{bcom.fullname}}</a>
+                                                </h5>
+                                                <p class="date">{{bcom.date}}</p>
+                                              </div>                             
+                                              </div>
+                                        </div>
+
+                                        </div>
+
+                                        <div class="reply-btn">
+                                        <a class="btn btn-secondary  btn-reply text-uppercase" (click)="togglePanel[i]=!togglePanel[i]" style="cursor: pointer;">Reply</a>
+                                        </div>
+                                </div>
+                                <app-blogreplyform [blogcommentId]="bcom._id" *ngIf="togglePanel[i]"></app-blogreplyform>
+                                
+                                </div>
+
+
+                               </div>
+                               
+
+                              <div class="comment-form">
+                              <h4>Post a comment</h4>
+                              <form class="form-contact comment_form"  #BlogCommentForm="ngForm" (ngSubmit)="onSubmitt(BlogCommentForm)" enctype="multipart/form-data">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="form-group">
+                                      <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Write Comment" #message="ngModel" [(ngModel)]="blogcommentservice.selectedBlogComment.message" required autocomplete="off"></textarea>
+                                      <span *ngIf="message.invalid && (message.dirty || message.touched)">
+                                        <span *ngIf="message.errors.required">Message is Required!!</span></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <input class="form-control" id="fullname" name="fullname" #fullname="ngModel" [(ngModel)]="blogcommentservice.selectedBlogComment.fullname" placeholder="Your Full name"  required autocomplete="off"type="text" placeholder="Name">
+                                    <span *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                                      <span *ngIf="fullname.errors.required">Name is Required!!</span></span>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <input class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="blogcommentservice.selectedBlogComment.email" required="required" email autocomplete="off" placeholder="Email">
+                                    <span *ngIf="email.invalid && (email.dirty || email.touched)">
+                                      <span *ngIf="email.errors.required">Email is Required!!</span>
+                                      <span *ngIf="email.errors.email">Email is Invalid!!</span></span>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="form-group">
+                                    <input type="datetime-local"  class="form-control" name="date" #date="ngModel" [(ngModel)]="blogcommentservice.selectedBlogComment.date" required>
+                                    <span *ngIf="date.invalid && (date.dirty || date.touched)">
+                                    <span *ngIf="date.errors.required">Date is Required!!</span></span>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="form-group">
+                                  <input type="text" class="form-control" name="image" #image="ngModel" [(ngModel)]="blogcommentservice.selectedBlogComment.image" placeholder="Your Image Path" autocomplete="off">
+                                  <div class="info">
+                                    <p><strong>NOTE:</strong> This field is optional.</p>
+                                  </div>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="form-group">
+                                    <input class="form-control"  id="phonenumber" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="blogcommentservice.selectedBlogComment.phonenumber" minlength="6" maxlength="10" required autocomplete="off" placeholder="Phone Number">
+                                    <span *ngIf="phonenumber.invalid && (phonenumber.dirty || phonenumber.touched)">
+                                      <span *ngIf="phonenumber.errors.required">Phone-No is Required!!</span>
+                                      <span *ngIf="phonenumber.errors.minlength">Phone-No must be at least 6 characters long!!</span>
+                                      <span *ngIf="phonenumber.errors.maxlength">Phone-No must be max 10 characters long!!</span></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-danger" [disabled]="!BlogCommentForm.valid">Submit Now</button>
+                                
+                              </div>
+                            </form>
+                            <div class="alert alert-info" *ngIf="showSuccessMessage">
+                              Commented successfully.
+                          </div>
+                                          </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <div class="blog_right_sidebar">
+                                        <aside class="single_sidebar_widget search_widget">
+                                            <form action="#">
+                                              <div class="form-group">
+                                                <div class="input-group mb-3">
+                                                  <input type="text" class="form-control" placeholder="Search Keyword" id="myInput" autocomplete="off">
+                                                  <div class="input-group-append">
+                                                    <button class="btn" type="button"><i class="ti-search"></i></button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <button class="main_btn rounded-0 w-100" type="submit" disabled>Search</button>
+                                            </form>
+                                        </aside>
+      
+                            <aside class="single_sidebar_widget post_category_widget">
+                              <h4 class="widget_title">Category</h4>
+                              <ul class="list cat-list" id="myList" >
+                                  <li>
+                                      <a [routerLink]="['/Blog/BlogData']" class="d-flex active ">
+                                        <p>JAVASCRIPT</p>
+                                        <p>(19)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['/Blog/Php']" class="d-flex">
+                                        <p>PHP</p>
+                                        <p>(07)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['/Blog/Ionic']" class="d-flex">
+                                        <p>IONIC</p>
+                                        <p>(06)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['/Blog/Angular']" class="d-flex">
+                                        <p>ANGULAR</p>
+                                        <p>(07)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['/Blog/React']" class="d-flex">
+                                        <p>REACT</p>
+                                        <p>(O3)</p>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['/Blog/Jquery']" class="d-flex">
+                                        <p>JQUERY</p>
+                                        <p>(06)</p>
+                                      </a>
+                                  </li>
+                              </ul>
+                            </aside>
+      
+                            <aside class="single_sidebar_widget popular_post_widget">
+                                <h3 class="widget_title">Recent Post</h3>
+                                <div class="media post_item">
+                                  <img src="assets/img/product/inspired-product/i30.jpg" alt="post" style="width: 80px;">
+                                    <div class="media-body">
+                                        <a [routerLink]="['/Blog/AngularTutorial']">
+                                          <h3>Angular 7 Tutorial</h3>
+                                        </a>
+                                        <p>August 10, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                  <img src="assets/img/product/inspired-product/i31.jpg" alt="post" style="width: 80px;">                          
+                                    <div class="media-body">
+                                        <a [routerLink]="['/Blog/PhpTutorial']">
+                                          <h3>PHP Tutorial</h3>
+                                        </a>
+                                        <p>May 05, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                  <img src="assets/img/product/inspired-product/i32.jpg" alt="post" style="width: 80px;">                             
+                                    <div class="media-body">
+                                        <a [routerLink]="['/Blog/JqueryTutorial']">
+                                          <h3>jQuery Tutorial</h3>
+                                        </a>
+                                        <p>July 06, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                  <img src="assets/img/product/inspired-product/i33.jpg" alt="post" style="width: 80px;">
+                                    <div class="media-body">
+                                        <a [routerLink]="['/Blog/JavascriptTutorial']">
+                                          <h3>Javascript Tutorial</h3>
+                                        </a>
+                                        <p>June 25, 2020</p>
+                                    </div>
+                                </div>
+                            </aside>
+                            <aside class="single_sidebar_widget tag_cloud_widget">
+                                <h4 class="widget_title">Tag Clouds</h4>
+                                <ul class="list">
+                                  <li>
+                                    <a [routerLink]="['/Blog/ExpressJSTutorial']">ExpressJS</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/NodeJSTutorial']">NodeJS</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/AngularTutorial']">Angular</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/MongoDBTutorial']">MongoDB</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/JavascriptTutorial']">Javascript</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/HtmlTutorial']">Html</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/BootstrapTutorial']">Bootstrap</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Blog/TypeScriptTutorial']">Typescript</a>
+                                </li>
+                                </ul>
+                            </aside>
+      
+      
+                            <aside class="single_sidebar_widget instagram_feeds">
+                              <h4 class="widget_title">Instagram Feeds</h4>
+                              <ul class="instagram_row flex-wrap">
+                                <li>
+                                  <a href="https://www.instagram.com/">
+                                    <img class="img-fluid" src="assets/img/product/inspired-product/i34.png" alt="" style="height: 70px;">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/">
+                                    <img class="img-fluid" src="assets/img/product/inspired-product/i35.png" alt="" style="height: 70px;">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/">
+                                    <img class="img-fluid" src="assets/img/product/inspired-product/i36.png" alt="" style="height: 70px;">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/">
+                                    <img class="img-fluid" src="assets/img/product/inspired-product/i37.png" alt="" style="height: 70px;width:100px">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/">
+                                    <img class="img-fluid" src="assets/img/product/inspired-product/i38.png" alt="" style="height: 70px;">
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/">
+                                    <img class="img-fluid" src="assets/img/product/inspired-product/i39.png" alt="" style="height: 70px;width: 100px;">
+                                  </a>
+                              </li>
+                              </ul>
+                            </aside>
+      
+      
+                            <aside class="single_sidebar_widget newsletter_widget">
+                              <h4 class="widget_title">Newsletter</h4>
+      
+                              <form #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+                                <div class="form-group">
+                                  <input type="email" class="form-control" placeholder="Enter email"  id="EMAIL" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email >
+                                  <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                                  </span>
+                                </div>
+                                <button class="main_btn rounded-0 w-100" type="submit" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                              </form>
+                            </aside>
+                        </div>
+                                  </div>
+                          </div>
+                  </div>
+                  <button *ngIf="isShow" (click)="gotoTop()" id="button" class="btn btn-primary"><i class="fa fa-arrow-up"></i></button>
+          </section>
+          </div>
+          
+          <!--================Blog Area =================-->
+      
+          <!--================ start footer Area  =================-->
+          <footer class="footer-area section_gap">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-3 col-md-7 single-footer-widget">
+                  <h4 style="margin-left: 10px;">CONTACT US</h4>
+                  <table>
+                    <tr>
+                      <th>
+                    <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+                      </th>
+                      <th>
+                    <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+                    </th>
+                    </tr>
+                   <tr>
+                     <th>
+                      <i class="fa fa-phone fa-2x" style="color: white;"></i>
+                     </th>
+                     <th>
+                      <h6 style="color: white;">+91-7355876362</h6>
+                      </th>
+                   </tr>
+                   <tr>
+                     <th>
+                      <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+                     </th>
+                     <th>
+                      <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+                     </th>
+                   </tr>
+                 </table>
+                </div>
+               
+                <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+                  <h4>NEWSLETTER</h4>
+                  <p>You can trust us. we only send promo offers,</p>
+                  <div class="form-wrap" id="mc_embed_signup">
+                    <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+                      <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+                      <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                        </span>
+                      <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                      <div style="position: absolute; left: -5000px;">
+                        <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                      </div>
+                      <div class="info"></div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+                  <h4>ABOUT</h4>
+                  <table>
+                    <tr>
+                      <td>
+                        <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              
+              </div>
+
+              <div class="footer-bottom row align-items-center">
+                <p class="footer-text m-0 col-lg-8 col-md-12">
+        Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+                <div class="col-lg-4 col-md-12 footer-social">
+                  <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+                  <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+                  <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+                </div>
+              </div>
+              
+            </div>
+          </footer>

@@ -1,0 +1,66 @@
+<article class="blog_item">
+
+    <div class="blog_item_img">
+        <img src="assets/img/product/inspired-product/i90.jpg" alt="post">
+    </div>
+    
+    <div class="blog_details">
+    
+    <h2>ExpressJS Tutorial</h2>
+    <p>Express is a fast, assertive, essential and moderate web framework of Node.js. You can assume express as a layer built on the top of the Node.js that helps manage a server and routes. It provides a robust set of features to develop web and mobile applications.<br><br>
+        Let's see some of the core features of Express framework:<br><br>
+        <li>It can be used to design single-page, multi-page and hybrid web applications.</li>
+        <li>It allows to setup middlewares to respond to HTTP Requests.</li>
+        <li>It defines a routing table which is used to perform different actions based on HTTP method.</li>
+        <li>It allows to dynamically render HTML Pages based on passing arguments to templates.</li>
+    </p>
+    <h2>Why use Express</h2>
+    <li>Ultra fast I/O</li>
+    <li>Asynchronous and single threaded</li>
+    <li>MVC like structure</li>
+    <li>Robust API makes routing easy</li><br>
+    <h2>How does Express look like</h2>
+    <p>Let's see a basic Express.js app.<br><br>
+       <strong>File: index.js</strong>
+    </p>
+    <div class="w3-codespan w3-border"> 
+        <code>
+        var express = require('express');<br>
+        var app = express();<br>
+        app.get('/', function (req, res) &#x0007B;<br>      
+        res.send('Welcome to Eiser!!'); <br>
+        &#x0007D;);<br>
+        var server = app.listen(8080, function () &#x0007B;<br>
+        var host = server.address().address;<br>
+        var port = server.address().port;<br>
+        console.log('Express Server started at port : 8080');<br>
+        &#x0007D;); 
+        </code>
+        </div><br>
+    <img src="assets/img/product/inspired-product/i127.png" style="width: 600px;" alt="post" ><br><br>
+    <strong>Output:</strong><br><br>
+    <img src="assets/img/product/inspired-product/i128.png" style="width: 400px;" alt="post" ><br><br>
+    <h2>Install Express.js</h2>
+    <p>Firstly, you have to install the express framework globally to create web application using Node terminal. Use the following command to install express framework globally.</p>
+    <div id="p01"><span>npm install -g express</span>
+    </div><br>
+    <p>The following command will install latest version of express.js local to your project folder.</p>
+    <div id="p01"><span>C:\MyNodeJSApp> npm install express --save</span>
+    </div><br>
+    <p>As you know, --save will update the package.json file by specifying express.js dependency.</p>
+    <h5>Install Express.js in Visual Studio</h5>
+    <p>In the node.js web app, we created a simple node.js web application in Visual Studio. Now, to install Express.js, right click on the project MyNodejsWebApp -> select Install New npm Packages.</p>
+    <img src="assets/img/product/inspired-product/i129.png" style="width: 400px;" alt="post" ><br><br>
+    <p>It will open the following dialog box.</p>
+    <img src="assets/img/product/inspired-product/i130.png" style="width: 600px;" alt="post" ><br><br>
+    <p>Now, type 'express' in the search box. It will display all the packages starting with express. Select latest version of express.js and select<br><br>
+       <strong> Add to package.json</strong> checkbox and then click<strong> Install Package</strong> button as shown below.
+    </p>
+    <img src="assets/img/product/inspired-product/i131.png" style="width: 600px;" alt="post" ><br><br>
+    <p>So, this will install express.js package into your project under node_modules folder. It also adds a dependencies entry for express.js as shown below.</p>
+    <img src="assets/img/product/inspired-product/i132.png" style="width: 600px;" alt="post" ><br><br>
+    <p>Now, you are ready to use Express.js in your application.</p>
+
+    </div>
+    </article>
+

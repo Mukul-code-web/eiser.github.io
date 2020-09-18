@@ -1,0 +1,20 @@
+<article class="blog_item">
+    <div class="blog_item_img">
+      <img class="card-img rounded-0" [src]="blogItem.imageurl" alt="">
+      <a class="blog_item_date" style="color: white;">
+        <h3>{{blogItem.date}}</h3>
+        <p>{{blogItem.month}}</p>
+      </a>
+    </div>
+    
+    <div class="blog_details">
+        <a class="d-inline-block" (click)="getNavigation('BlogDetails',blogItem._id)">
+            <h2>{{blogItem.name}}</h2>
+        </a>
+        <p>{{blogItem.description}}</p>
+        <ul class="blog-info-link">
+          <li><a href="#"><i class="ti-user"></i>{{blogItem.category}}</a></li>
+          <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
+        </ul>
+    </div>
+  </article>

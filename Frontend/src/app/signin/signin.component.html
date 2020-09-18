@@ -1,0 +1,119 @@
+<div style="margin-top: 89px;">
+    <div class="container-fluid">
+      <div class="form-gap"></div>
+        <div class="login-form">
+            <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+                <h2 class="text-center">Sign In</h2>		
+                <div class="text-center social-btn">
+                    <a  style="color:white" href="http://localhost:8080/users/auth/facebook"  class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+                    <a style="color:white"  href="http://localhost:8080/users/auth/twitter"  class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a>
+                    <a style="color:white"  href="http://localhost:8080/users/auth/google" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+                </div>
+                <div class="or-seperator"><i>or</i></div>
+                <div class="form-group">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        <input type="text"  class="form-control" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" required="required" email>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        <input type="password"  class="form-control" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password"   placeholder="Password" required="required" minlength="4" maxlength="8">
+                    </div>
+                </div>        
+                <div class="form-group">
+                    <button type="submit"  class="btn btn-success btn-block login-btn" >Sign in</button>
+                </div>
+                <div class="clearfix">
+                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                    <a [routerLink]="['/ResetPassword']"  class="pull-right text-success">Forgot Password?</a>
+                </div><br>
+                <div class="hint-text small">Don't have an account? <a [routerLink]="['/SignUp']" class="text-success">Register Now!</a></div><br>
+                <div class="alert alert-danger" *ngIf="serverErrorMessages && server" style="text-align: center;">
+                    {{serverErrorMessages}}
+                  </div>
+            </form>
+            
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-7 single-footer-widget">
+            <h4 style="margin-left: 10px;">CONTACT US</h4>
+            <table>
+              <tr>
+                <th>
+              <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+                </th>
+                <th>
+              <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+              </th>
+              </tr>
+             <tr>
+               <th>
+                <i class="fa fa-phone fa-2x" style="color: white;"></i>
+               </th>
+               <th>
+                <h6 style="color: white;">+91-7355876362</h6>
+                </th>
+             </tr>
+             <tr>
+               <th>
+                <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+               </th>
+               <th>
+                <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+               </th>
+             </tr>
+           </table>
+          </div>
+         
+          <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+            <h4>NEWSLETTER</h4>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmitt(SubscribedForm)">
+                <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+                <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                  </span>
+                <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                <div style="position: absolute; left: -5000px;">
+                  <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                </div>
+                <div class="info"></div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+            <h4>ABOUT</h4>
+            <table>
+              <tr>
+                <td>
+                  <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        
+        </div>
+
+        <div class="footer-bottom row align-items-center">
+          <p class="footer-text m-0 col-lg-8 col-md-12">
+  Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+          <div class="col-lg-4 col-md-12 footer-social">
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+            <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+            <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+        
+      </div>
+    </footer>

@@ -1,0 +1,132 @@
+<div style="margin-top: 89px;" >
+    <div class="container-fluid">
+      <div class="form-gap"></div>
+        <div class="login-form">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+              <h3 style="text-align: center;"><i class="fa fa-user-plus fa-4x"></i></h3>
+              <h2 class="text-center">Sign Up</h2>
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-text" ><i class="fa fa-user fa-1x" style="color:black"></i></span>
+                        <input type="text"  class="form-control" name="username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" placeholder="UserName" required="required">
+                    </div>
+                    <span *ngIf="username.invalid && (username.dirty || username.touched)">
+                    <span *ngIf="username.errors.required">UserName is Required!!</span></span>
+                </div>        
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-envelope fa-1x" style="color:black"></i></span>
+                        <input type="text"  class="form-control" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email"  placeholder="Email" required="required" email>
+                    </div>
+                    <span *ngIf="email.invalid && (email.dirty || email.touched)">
+                        <span *ngIf="email.errors.required">Email is Required!!</span>
+                        <span *ngIf="email.errors.email">Email is Invalid!!</span></span>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-lock fa-1x" style="color:black"></i></span>
+                        <input type="password"  class="form-control" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="Password" required="required" minlength="4" maxlength="8">
+                    </div>
+                    <span *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <span *ngIf="password.errors.required">Password is Required!!</span>
+                        <span *ngIf="password.errors.minlength">Password must be at least 4 characters long!!</span>
+                        <span *ngIf="password.errors.maxlength">Password must be max 8 characters long!!</span></span>
+                </div>        
+                <div class="form-group">
+                    <button type="submit"  class="btn btn-success btn-block login-btn" [disabled]="!userForm.valid">Sign Up</button>
+                </div>
+                <div class="clearfix">
+                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                    
+                </div><br>
+                <div class="hint-text small">Already have an account? <a [routerLink]="['/SignIn']" class="text-success">Sign in</a></div><br>
+                <div class="alert alert-info" *ngIf="showSuccessMessage">
+                    Submitted successfully.
+                </div>
+                <div class="alert alert-danger" *ngIf="serverErrorMessages && server">
+                    {{serverErrorMessages}}
+                  </div>
+                
+            </form>
+            </div>
+        </div>
+        </div>
+
+        <footer class="footer-area section_gap">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-lg-3 col-md-7 single-footer-widget">
+                <h4 style="margin-left: 10px;">CONTACT US</h4>
+                <table>
+                  <tr>
+                    <th>
+                  <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+                    </th>
+                    <th>
+                  <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+                  </th>
+                  </tr>
+                 <tr>
+                   <th>
+                    <i class="fa fa-phone fa-2x" style="color: white;"></i>
+                   </th>
+                   <th>
+                    <h6 style="color: white;">+91-7355876362</h6>
+                    </th>
+                 </tr>
+                 <tr>
+                   <th>
+                    <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+                   </th>
+                   <th>
+                    <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+                   </th>
+                 </tr>
+               </table>
+              </div>
+             
+              <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+                <h4>NEWSLETTER</h4>
+                <p>You can trust us. we only send promo offers,</p>
+                <div class="form-wrap" id="mc_embed_signup">
+                  <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmitt(SubscribedForm)">
+                    <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+                    <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                      </span>
+                    <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                    <div style="position: absolute; left: -5000px;">
+                      <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                    </div>
+                    <div class="info"></div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+                <h4>ABOUT</h4>
+                <table>
+                  <tr>
+                    <td>
+                      <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            
+            </div>
+
+            <div class="footer-bottom row align-items-center">
+              <p class="footer-text m-0 col-lg-8 col-md-12">
+      Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+              <div class="col-lg-4 col-md-12 footer-social">
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+                <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+                <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
+            
+          </div>
+        </footer>

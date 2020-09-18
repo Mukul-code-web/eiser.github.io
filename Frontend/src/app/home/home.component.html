@@ -1,0 +1,276 @@
+<body>
+<div style="margin-top:80px;">
+        <section class="home_banner_area mb-40">
+            <div class="banner_inner d-flex align-items-center">
+              <div class="container">
+                <div class="banner_content row">
+                  <div class="col-lg-12">
+                    <p class="sub text-uppercase">ALL Collection</p>
+                    <h3><span>Show</span> Your <br />Personal <span>Style</span></h3>
+                    <h4>Fowl saw dry which a above together place.</h4>
+                    <a class="main_btn mt-40" [routerLink]="['/Collections1']">View Collection</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--================End Home Banner Area =================-->
+        
+          <!-- Start feature Area -->
+          <section class="feature-area section_gap_bottom_custom">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6">
+                  <div class="single-feature">
+                    <a  class="title">
+                      <i class="flaticon-money"></i>
+                      <h3>Money back gurantee</h3>
+                    </a>
+                    <p>Shall open divide a one</p>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-md-6">
+                  <div class="single-feature">
+                    <a  class="title">
+                      <i class="flaticon-truck"></i>
+                      <h3>Free Delivery</h3>
+                    </a>
+                    <p>Shall open divide a one</p>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-md-6">
+                  <div class="single-feature">
+                    <a class="title">
+                      <i class="flaticon-support"></i>
+                      <h3>Alway support</h3>
+                    </a>
+                    <p>Shall open divide a one</p>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-md-6">
+                  <div class="single-feature">
+                    <a  class="title">
+                      <i class="flaticon-blockchain"></i>
+                      <h3>Secure payment</h3>
+                    </a>
+                    <p>Shall open divide a one</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End feature Area -->
+        
+          <!--================ Feature Product Area =================-->
+          <section class="feature_product_area section_gap_bottom_custom">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="main_title">
+                    <h2><span>Featured product</span></h2>
+                    <p>Bring called seed first of third give itself now ment</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="table">
+                <div class="row">
+                <div class="col-md-4" *ngFor="let product of shopList2">
+                <app-home2 [productItem]="product" [addedToWishlist]="wishlist.indexOf(product._id) >= 0"></app-home2>
+                </div>
+                </div>
+                </div>
+             
+            </div>
+            <button *ngIf="isShow" (click)="gotoTop()" id="button" class="btn btn-primary"><i class="fa fa-arrow-up"></i></button>
+          </section>
+          <!--================ End Feature Product Area =================-->
+        
+          <!--================ Offer Area =================-->
+          <section class="offer_area">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="offset-lg-4 col-lg-6 text-center">
+                  <div class="offer_content">
+                    <h3 class="text-uppercase mb-40">all men’s collection</h3>
+                    <h2 class="text-uppercase">50% off</h2>
+                    <a [routerLink]="['/Collections1']" class="main_btn mb-20 mt-5">Discover Now</a>
+                    <p>Limited Time Offer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--================ End Offer Area =================-->
+        
+          <!--================ New Product Area =================-->
+          <section class="new_product_area section_gap_top section_gap_bottom_custom">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="main_title">
+                    <h2><span>new products</span></h2>
+                    <p>Bring called seed first of third give itself now ment</p>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row">
+                
+                <div class="col-lg-6">
+                  <div class="new_product">
+                    <h5 class="text-uppercase">collection of 2020</h5>
+                    <h3 class="text-uppercase">Men’s summer t-shirt</h3>
+                    <div class="product-img">
+                      <img class="img-fluid" src="assets/img/product/new-product/new-product1.png" alt="" />
+                    </div>
+                    <h4>{{2000 | currency:'INR'}}</h4>
+                    <a [routerLink]="['/Collections7']" class="main_btn">View Collection</a>
+                  </div>
+                </div>
+        
+                <div class="col">
+                <div class="table">
+                  <div class="row">
+                  <div class="col-md-6" *ngFor="let product of shopList3">
+                  <app-home3 [productItem]="product" [addedToWishlist]="wishlist.indexOf(product._id) >= 0"></app-home3>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+              </div>
+            </div>
+          </section>
+          <!--================ End New Product Area =================-->
+        
+          <!--================ Inspired Product Area =================-->
+          <section class="inspired_product_area section_gap_bottom_custom">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="main_title">
+                    <h2><span>Inspired products</span></h2>
+                    <p>Bring called seed first of third give itself now ment</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="table">
+                <div class="row">
+                <div class="col-md-3" *ngFor="let product of shopList">
+                <app-home1 [productItem]="product" [addedToWishlist]="wishlist.indexOf(product._id) >= 0"></app-home1>
+                </div>
+                </div>
+                </div>
+            </div>
+          </section>
+          <!--================ End Inspired Product Area =================-->
+        
+          <!--================ Start Blog Area =================-->
+          <section class="blog-area section-gap">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="main_title">
+                    <h2><span>latest blog</span></h2>
+                    <p>Bring called seed first of third give itself now ment</p>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="col-lg-4 col-md-6" *ngFor="let product of shopList4">
+                  <app-home4 [productItem]="product"></app-home4>
+                  </div>
+                </div>
+                
+              
+            </div>
+          </section>
+          <!--================ End Blog Area =================-->
+        
+          <!--================ start footer Area  =================-->
+          <footer class="footer-area section_gap">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-3 col-md-7 single-footer-widget">
+                  <h4 style="margin-left: 10px;">CONTACT US</h4>
+                  <table>
+                    <tr>
+                      <th>
+                    <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+                      </th>
+                      <th>
+                    <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+                    </th>
+                    </tr>
+                   <tr>
+                     <th>
+                      <i class="fa fa-phone fa-2x" style="color: white;"></i>
+                     </th>
+                     <th>
+                      <h6 style="color: white;">+91-7355876362</h6>
+                      </th>
+                   </tr>
+                   <tr>
+                     <th>
+                      <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+                     </th>
+                     <th>
+                      <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+                     </th>
+                   </tr>
+                 </table>
+                </div>
+               
+                <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+                  <h4>NEWSLETTER</h4>
+                  <p>You can trust us. we only send promo offers,</p>
+                  <div class="form-wrap" id="mc_embed_signup">
+                    <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+                      <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+                      <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                        </span>
+                      <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                      <div style="position: absolute; left: -5000px;">
+                        <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                      </div>
+                      <div class="info"></div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+                  <h4>ABOUT</h4>
+                  <table>
+                    <tr>
+                      <td>
+                        <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              
+              </div>
+
+              <div class="footer-bottom row align-items-center">
+                <p class="footer-text m-0 col-lg-8 col-md-12">
+        Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+                <div class="col-lg-4 col-md-12 footer-social">
+                  <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+                  <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+                  <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+                </div>
+              </div>
+              
+            </div>
+          </footer>
+         
+</div>
+</body>

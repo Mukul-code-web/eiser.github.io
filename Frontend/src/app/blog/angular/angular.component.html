@@ -1,0 +1,27 @@
+<div  *ngFor="let blog of blogList">
+    <app-blogangular [blogItem]="blog" ></app-blogangular>
+    </div>
+    <nav class="blog-pagination justify-content-center d-flex">
+      <ul class="pagination">
+          <li class="page-item">
+              <a (click)="function()" class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">
+                      <span class="ti-arrow-left"></span>
+                  </span>
+              </a>
+          </li>
+          <li class="page-item">
+              <a [routerLink]="['/Angular']" class="page-link">1</a>
+          </li>
+          <li class="page-item active">
+              <a (click)="function()"  class="page-link">2</a>
+          </li>
+          <li class="page-item">
+              <a (click)="function()"  class="page-link" aria-label="Next">
+                  <span aria-hidden="true">
+                      <span class="ti-arrow-right"></span>
+                  </span>
+              </a>
+          </li>
+      </ul>
+  </nav>

@@ -1,0 +1,6 @@
+label{
+    text-decoration: underline;
+}
+button:disabled{
+    cursor:no-drop;
+}

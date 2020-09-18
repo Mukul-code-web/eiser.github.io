@@ -1,0 +1,19 @@
+th{
+    padding: 10px;
+}
+.p02{
+    background-color: #f2f2f2;
+    width: 295px;
+    margin-left: 10px;
+    margin-bottom: -10px;
+}
+.fa-times-circle{
+padding: 5px;
+margin-left: 250px;
+}
+.fa-times-circle:hover{
+    cursor: pointer;
+}
+button:disabled{
+    cursor:no-drop;
+}

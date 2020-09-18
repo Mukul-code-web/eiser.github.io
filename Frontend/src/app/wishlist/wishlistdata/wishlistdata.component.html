@@ -1,0 +1,23 @@
+
+<div class="single-product" style="padding: 10px;">
+    <div class="product-img">
+      <img class="img-fluid w-100" [src]="productItem.imageurl" style="height:300px;background-color:#f2f2f2;padding: 10px;" >
+    </div>
+    <div class="product-btm"  style="background-color: white;">
+      <a class="d-block">
+        <h4>{{productItem.name}}</h4>
+      </a>
+      <div class="mt-3">
+        <span class="mr-4">{{productItem.price | currency:'INR'}}</span>
+        <del>{{productItem.dprice | currency:'INR'}}</del>
+      </div>
+    </div>
+    <div class="p01"><a (click)="handleAddtoCart()">MOVE TO BAG</a></div>
+    <div class="alert alert-info" *ngIf="showSuccessMessage">
+      Item successfully added to bag.
+  </div>
+  <div class="alert alert-danger" *ngIf="serverErrorMessages && server">
+      {{serverErrorMessages}}
+    </div>
+  </div>
+  

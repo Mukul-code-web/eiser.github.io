@@ -1,0 +1,188 @@
+<div style="margin-top: 89px;"></div>
+<br>
+
+
+<div class="container-fluid">
+    <div *ngIf="this.product.selectedproducts.length===0" class="alert alert-danger"><marquee direction="right">You Haven't Placed Any Order.</marquee></div>
+    <div style="background-color: white;" *ngIf="this.product.selectedproducts.length>0">
+    <p style="padding: 10px;">Thank you. Your order has been received</p>
+    <table class="table" style="width: 100px;">
+      <tr>
+        <th>Order ID:</th>
+        <th>MM/DD/YYYY:</th>
+        <th>Total:</th>
+      </tr>
+      <tr>
+        <td style="color: #ff3300;font-weight: bold;">#1592560516583</td>
+        <td>{{ dateVal | date: 'd/M/y'}} at {{ dateVal | date:'h:mm a'}}</td>
+        <td>{{ cartTotal | currency:'INR'}}</td>
+      </tr>
+    </table>
+
+    <table class="table" style="background-color: white;">
+     <tr>
+       <th><h3>Order Details</h3></th></tr>
+      <tr>
+        <th>Product</th>
+        <th></th>
+        <th>Total</th>
+      </tr>
+      <tr *ngFor="let emp of this.product.selectedproducts">
+       <td><span>{{emp.name}}</span> </td> 
+       <td><span>x</span><span>{{emp.qty}}</span> </td>
+       <td><span><strong>{{ (emp.qty * emp.price) | currency:'INR' }}</strong></span></td>
+       </tr>
+       <tr>
+         <td><h6>Shipping and Handling</h6></td>
+         <td></td>
+         <td><strong>{{50 | currency:'INR'}}</strong></td>
+       </tr>
+       <tr>
+       <td><strong>Subtotal </strong></td>
+       <td></td>
+       <td>
+       <h3 class="active" >{{ cartTotal | currency:'INR'}}</h3>
+       </td>
+       </tr>  
+</table>
+
+<table class="table" style="background-color: white;">
+  <tr>
+    <th><h3>Billing Shipping Address and PaymentMethod</h3></th></tr>
+    <tr *ngFor="let bill of product.Billing">
+    <td><h6><li>{{bill.address}}</li></h6>
+     <h6><li>{{bill.paymentmethod}}</li></h6>
+     </td>
+    </tr>
+</table>
+
+<table class="table" style="background-color: white;">
+<tr>
+<th><h3>Customer Details</h3></th></tr>
+ <tr>
+<div style="padding-left: 12px;">
+<label>UserName:</label>
+<p *ngFor="let user of userService.users">{{user.username}}</p>
+<label> Email:</label> 
+<p *ngFor="let user of userService.users">{{user.email}}</p>
+</div>
+</tr>
+</table>
+
+<h3  style="padding-left: 12px;">Our Payment Details</h3><br>
+<table class="table">
+  <tr>
+    <th>
+  <h6>Our Bank Details</h6>
+  </th>
+  <th>
+    <h6>Our Cheque Details</h6>
+  </th>
+  <th>
+    <h6>PayPal Details</h6>
+  </th>
+  </tr>
+  <tr>
+    <td>
+  <h6 style="color:#ff3300">TIEN NGUYEN VAN - Asia Commercial Bank (ACB) Vietnam</h6>
+  <table class="table"  style="width: 500px;">
+    <tr>
+      <th>Account Number:</th>
+      <th>Sort Code:</th>
+      <th>IBAN:</th>
+      <th>BIC:</th>
+    </tr>
+    <tr>
+      <td style="color:#ff3300">1893 3820 0804 2802</td>
+      <td style="font-weight: bold;">8938</td>
+      <td style="font-weight: bold;">7389</td>
+      <td style="font-weight: bold;">8298</td>
+    </tr>
+  </table>
+  </td>
+  <td><h6>Please send your cheque to <span style="color: #ff3300;">Spot Commerce, 91-93 Mai Van Vinh Street, District 7, Ho Chi Minh City, Vietnam, 80000</span></h6></td>
+  <td><h6><a href="https://www.paypal.com/us/signin">https://www.paypal.com/us/signin</a></h6></td>
+  </tr>
+ </table>
+
+</div>                    
+</div>
+<br>
+
+<footer class="footer-area section_gap">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-7 single-footer-widget">
+        <h4 style="margin-left: 10px;">CONTACT US</h4>
+        <table>
+          <tr>
+            <th style="padding: 10px;">
+          <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+            </th>
+            <th style="padding: 10px;">
+          <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+          </th>
+          </tr>
+         <tr>
+           <th style="padding: 10px;">
+            <i class="fa fa-phone fa-2x" style="color: white;"></i>
+           </th>
+           <th style="padding: 10px;">
+            <h6 style="color: white;">+91-7355876362</h6>
+            </th>
+         </tr>
+         <tr>
+           <th style="padding: 10px;">
+            <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+           </th>
+           <th style="padding: 10px;">
+            <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+           </th>
+         </tr>
+       </table>
+      </div>
+     
+      <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+        <h4>NEWSLETTER</h4>
+        <p>You can trust us. we only send promo offers,</p>
+        <div class="form-wrap" id="mc_embed_signup">
+          <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+            <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+            <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+              </span>
+            <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+            <div style="position: absolute; left: -5000px;">
+              <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+            </div>
+            <div class="info"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+        <h4>ABOUT</h4>
+        <table>
+          <tr>
+            <td>
+              <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    
+    </div>
+
+    <div class="footer-bottom row align-items-center">
+      <p class="footer-text m-0 col-lg-8 col-md-12">
+Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+      <div class="col-lg-4 col-md-12 footer-social">
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+        <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+        <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+    
+  </div>
+</footer>

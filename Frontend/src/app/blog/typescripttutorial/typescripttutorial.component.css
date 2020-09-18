@@ -1,0 +1,22 @@
+#p02{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:#f5f5ef;
+    padding: 10px;
+    color: black;
+}
+#p03{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:#f5f5ef;
+    padding:10px;
+    color: black;
+}
+.w3-border{
+    border: 1px solid lightgray;
+    padding: 10px;
+    background-color:#f5f5ef;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.w3-warning{
+    background-color:pink;
+    color: black;
+    }

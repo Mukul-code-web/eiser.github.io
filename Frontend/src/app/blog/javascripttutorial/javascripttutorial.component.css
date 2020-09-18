@@ -1,0 +1,8 @@
+.w3-border{
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+.w3-warning{
+background-color:pink;
+color: black;
+}

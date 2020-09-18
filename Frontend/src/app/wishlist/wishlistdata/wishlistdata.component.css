@@ -1,0 +1,23 @@
+a{
+    text-decoration: none;
+}
+.ti-shopping-cart,.ti-eye,.ti-heart:hover,.fa-heart{
+    cursor: pointer;
+}
+.css:hover{
+    cursor: pointer;
+}
+.p01{
+    background-color: white;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #ff1a75;
+}
+i{
+    margin-left: 230px;
+}
+a:hover{
+    cursor: pointer;
+}

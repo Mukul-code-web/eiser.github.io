@@ -1,0 +1,119 @@
+
+<div *ngIf="cartItems.length===0" class="alert alert-info">Your Cart is Empty.</div>
+<table *ngIf="cartItems.length>0" class="table" style="background-color: white;">
+      <thead>
+        <tr>
+              <th style="padding: 40px;">Index</th>
+              <th style="text-align: center;padding: 40px;" >Product</th>
+              <th style="padding: 40px;">Quantity</th>
+              <th style="padding: 40px;">Price</th>
+              <th style="padding: 40px;">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+             
+              <tr *ngFor="let item of cartItems;let i=index">
+
+              <td>{{i+1}}.</td> 
+              <td><img class="card-img" [src]="item.imageurl" alt=""style="width:100px"><span  style="padding-left: 50px;">{{item.productName}}</span> </td> 
+              <td><span style="padding-right: 10px;">{{item.qty}}</span><i class="fa fa-plus-circle fa-1x" style="color:black" (click)="increament(item)"></i>
+              <i class="fa fa-minus-circle fa-1x" style="color:black" (click)="decreament(item)"></i> </td>
+              <td><span>{{item.price | currency:'INR'}}</span></td>
+              <td> <span><strong>{{ (item.qty * item.price) | currency:'INR' }}</strong></span></td>
+              <td><i class="fa fa-times fa-1x" style="color:black" (click)="removeitem(i,item)"></i></td>
+             
+              </tr>
+
+            
+              <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+              <div class="list-group-item active">
+              <strong>Subtotal </strong>{{ cartTotal | currency:'INR'}}
+              </div>
+              </td>
+              </tr>
+              </tbody>
+              </table>
+              
+              <footer class="footer-area section_gap">
+                <div class="container">
+                  <div class="row">
+    
+                    <div class="col-lg-3 col-md-7 single-footer-widget">
+                      <h4 style="margin-left: 10px;">CONTACT US</h4>
+                      <table>
+                        <tr>
+                          <th style="padding: 10px;">
+                        <i class="fa fa-map-marker fa-2x" style="color: white;"></i>
+                          </th>
+                          <th style="padding: 10px;">
+                        <h6 style="color: white;">336-337 New Janak Puri Ambala cantt,<span style="color: white;font-weight: bold;">Haryana India</span></h6>
+                        </th>
+                        </tr>
+                       <tr>
+                         <th style="padding: 10px;">
+                          <i class="fa fa-phone fa-2x" style="color: white;"></i>
+                         </th>
+                         <th style="padding: 10px;">
+                          <h6 style="color: white;">+91-7355876362</h6>
+                          </th>
+                       </tr>
+                       <tr>
+                         <th style="padding: 10px;">
+                          <i class="fa fa-envelope fa-2x" style="color: white;"></i>
+                         </th>
+                         <th style="padding: 10px;">
+                          <h6 style="color: white;"><a href="www.gmail.com">ms2224852@gmail.com</a></h6>
+                         </th>
+                       </tr>
+                     </table>
+                    </div>
+                   
+                    <div class="col-lg-4 col-md-6 single-footer-widget" style="margin-left:80px;">
+                      <h4>NEWSLETTER</h4>
+                      <p>You can trust us. we only send promo offers,</p>
+                      <div class="form-wrap" id="mc_embed_signup">
+                        <form  class="form-inline" #SubscribedForm="ngForm" (ngSubmit)="onSubmit(SubscribedForm)">
+                          <input class="form-control" id="EMAIL" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Your Email Address '" required="" type="email" name="EMAIL" #EMAIL="ngModel" [(ngModel)]="contactservice.selectedSubscribed.EMAIL"  autocomplete="off" required email>
+                          <span *ngIf="EMAIL.invalid && (EMAIL.dirty || EMAIL.touched)">
+                            </span>
+                          <button class="click-btn btn btn-default" [disabled]="!SubscribedForm.valid">Subscribe</button>
+                          <div style="position: absolute; left: -5000px;">
+                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                          </div>
+                          <div class="info"></div>
+                        </form>
+                      </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-7 single-footer-widget" style="margin-left: 80px;">
+                      <h4>ABOUT</h4>
+                      <table>
+                        <tr>
+                          <td>
+                            <p>Eiser is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Eiser aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  
+                  </div>
+    
+                  <div class="footer-bottom row align-items-center">
+                    <p class="footer-text m-0 col-lg-8 col-md-12">
+            Copyright &copy;All rights reserved | This website is designed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a>Mukul Sharma</a></p>
+                    <div class="col-lg-4 col-md-12 footer-social">
+                      <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                      <a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
+                      <a href="https://gmail.com/"><i class="fa fa-google"></i></a>
+                      <a href="https://instagram.com/"><i class="fa fa-instagram"></i></a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </footer>
+             

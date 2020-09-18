@@ -1,0 +1,14 @@
+{
+    "development": {
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "1330m",
+        "CLIENT_URL":"http:localhost:3000",
+        "RESET_PASSWORD_KEY":"accountactivatekey123"
+    },
+    "production": {
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "1330m",
+        "CLIENT_URL":"http:localhost:3000",
+        "RESET_PASSWORD_KEY":"accountactivatekey123"
+    }
+}

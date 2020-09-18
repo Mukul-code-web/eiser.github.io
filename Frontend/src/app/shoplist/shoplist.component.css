@@ -1,0 +1,6 @@
+th{
+    padding: 10px;
+}
+button:disabled{
+    cursor:no-drop;
+}
